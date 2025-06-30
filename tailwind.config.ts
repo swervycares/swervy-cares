@@ -61,6 +61,21 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        // Swervy Cares Pink Purple Blue Theme
+        "swervy-pink": "var(--swervy-pink)",
+        "swervy-light-pink": "var(--swervy-light-pink)",
+        "swervy-pale-pink": "var(--swervy-pale-pink)",
+        "swervy-purple": "var(--swervy-purple)",
+        "swervy-light-purple": "var(--swervy-light-purple)",
+        "swervy-blue": "var(--swervy-blue)",
+        "swervy-light-blue": "var(--swervy-light-blue)",
+        "swervy-coral": "var(--swervy-coral)",
+        "swervy-coral-light": "var(--swervy-coral-light)",
+        "swervy-coral-bright": "var(--swervy-coral-bright)",
+        "swervy-peach": "var(--swervy-peach)",
+        "swervy-sunset": "var(--swervy-sunset)",
+        "swervy-turquoise": "var(--swervy-turquoise)",
+        "swervy-teal": "var(--swervy-teal)",
       },
       keyframes: {
         "accordion-down": {
@@ -79,10 +94,21 @@ export default {
             height: "0",
           },
         },
+        "aura-float": {
+          "0%, 100%": {
+            transform: "translateY(0px) scale(1)",
+            opacity: "0.7",
+          },
+          "50%": {
+            transform: "translateY(-20px) scale(1.05)",
+            opacity: "0.9",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "aura-float": "aura-float 4s ease-in-out infinite",
       },
     },
   },

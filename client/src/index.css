@@ -24,15 +24,21 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
-  /* Swervy Cares Custom Colors - Magical Pink Aura Theme */
-  --swervy-pink: hsl(325, 100%, 65%);
-  --swervy-light-pink: hsl(324, 100%, 85%);
-  --swervy-pale-pink: hsl(325, 100%, 95%);
+  /* Swervy Cares Custom Colors - Pink Purple Blue Aura Theme */
+  --swervy-pink: hsl(320, 100%, 70%);
+  --swervy-light-pink: hsl(315, 100%, 80%);
+  --swervy-pale-pink: hsl(310, 100%, 92%);
+  --swervy-purple: hsl(280, 100%, 70%);
+  --swervy-light-purple: hsl(270, 100%, 80%);
+  --swervy-blue: hsl(240, 100%, 70%);
+  --swervy-light-blue: hsl(220, 100%, 80%);
   --swervy-turquoise: hsl(174, 72%, 56%);
   --swervy-teal: hsl(162, 73%, 46%);
-  --swervy-rose: hsl(330, 85%, 75%);
-  --swervy-fuchsia: hsl(320, 90%, 70%);
-  --swervy-magenta: hsl(300, 85%, 65%);
+  --swervy-coral: hsl(320, 100%, 70%);
+  --swervy-coral-light: hsl(315, 100%, 80%);
+  --swervy-coral-bright: hsl(280, 100%, 70%);
+  --swervy-peach: hsl(270, 100%, 80%);
+  --swervy-sunset: hsl(240, 100%, 70%);
 }
 
 .dark {
@@ -108,6 +114,46 @@
   
   .bg-swervy-teal {
     background-color: var(--swervy-teal);
+  }
+  
+  .swervy-coral {
+    color: var(--swervy-coral);
+  }
+  
+  .bg-swervy-coral {
+    background-color: var(--swervy-coral);
+  }
+  
+  .swervy-coral-light {
+    color: var(--swervy-coral-light);
+  }
+  
+  .bg-swervy-coral-light {
+    background-color: var(--swervy-coral-light);
+  }
+  
+  .swervy-coral-bright {
+    color: var(--swervy-coral-bright);
+  }
+  
+  .bg-swervy-coral-bright {
+    background-color: var(--swervy-coral-bright);
+  }
+  
+  .swervy-peach {
+    color: var(--swervy-peach);
+  }
+  
+  .bg-swervy-peach {
+    background-color: var(--swervy-peach);
+  }
+  
+  .swervy-sunset {
+    color: var(--swervy-sunset);
+  }
+  
+  .bg-swervy-sunset {
+    background-color: var(--swervy-sunset);
   }
 }
 

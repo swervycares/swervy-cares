@@ -12,13 +12,13 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gradient-to-r from-swervy-light-pink to-swervy-pale-pink shadow-lg sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-swervy-coral-light to-swervy-peach shadow-xl sticky top-0 z-50 border-b-2 border-swervy-coral">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0 animate-bounce">
-              <h1 className="text-3xl font-bold text-gray-800">Swervy Cares</h1>
-              <p className="text-sm text-gray-600 mt-1">Empowering girls through self-care</p>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-swervy-coral to-swervy-sunset bg-clip-text text-transparent">Swervy Cares</h1>
+              <p className="text-sm text-swervy-coral font-semibold mt-1">Empowering girls through self-care</p>
             </div>
           </div>
           
@@ -27,40 +27,40 @@ export default function Header() {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link 
                 href="/"
-                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 ${
-                  location === '/' ? 'text-swervy-pink bg-swervy-pale-pink' : 'text-gray-700 hover:text-swervy-pink'
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-sm ${
+                  location === '/' ? 'text-white bg-gradient-to-r from-swervy-coral to-swervy-sunset shadow-lg' : 'text-swervy-coral hover:text-white hover:bg-gradient-to-r hover:from-swervy-coral-light hover:to-swervy-coral hover:shadow-md'
                 }`}
               >
                 Home
               </Link>
               <Link 
                 href="/mission"
-                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 ${
-                  location === '/mission' ? 'text-swervy-pink bg-swervy-pale-pink' : 'text-gray-700 hover:text-swervy-pink'
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-sm ${
+                  location === '/mission' ? 'text-white bg-gradient-to-r from-swervy-coral to-swervy-sunset shadow-lg' : 'text-swervy-coral hover:text-white hover:bg-gradient-to-r hover:from-swervy-coral-light hover:to-swervy-coral hover:shadow-md'
                 }`}
               >
                 Our Mission
               </Link>
               <Link 
                 href="/volunteer"
-                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 ${
-                  location === '/volunteer' ? 'text-swervy-pink bg-swervy-pale-pink' : 'text-gray-700 hover:text-swervy-pink'
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-sm ${
+                  location === '/volunteer' ? 'text-white bg-gradient-to-r from-swervy-coral to-swervy-sunset shadow-lg' : 'text-swervy-coral hover:text-white hover:bg-gradient-to-r hover:from-swervy-coral-light hover:to-swervy-coral hover:shadow-md'
                 }`}
               >
                 Volunteer
               </Link>
               <Link 
                 href="/donate"
-                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 ${
-                  location === '/donate' ? 'text-swervy-pink bg-swervy-pale-pink' : 'text-gray-700 hover:text-swervy-pink'
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-sm ${
+                  location === '/donate' ? 'text-white bg-gradient-to-r from-swervy-coral to-swervy-sunset shadow-lg' : 'text-swervy-coral hover:text-white hover:bg-gradient-to-r hover:from-swervy-coral-light hover:to-swervy-coral hover:shadow-md'
                 }`}
               >
                 Donate
               </Link>
               <Link 
                 href="/share"
-                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 ${
-                  location === '/share' ? 'text-swervy-pink bg-swervy-pale-pink' : 'text-gray-700 hover:text-swervy-pink'
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-sm ${
+                  location === '/share' ? 'text-white bg-gradient-to-r from-swervy-coral to-swervy-sunset shadow-lg' : 'text-swervy-coral hover:text-white hover:bg-gradient-to-r hover:from-swervy-coral-light hover:to-swervy-coral hover:shadow-md'
                 }`}
               >
                 Share
