@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Swervy Cares - AI-Powered Self-Care Kits for Empowering Girls</title>
+    <meta name="description" content="Discover personalized self-care kits with AI-powered recommendations. Swervy Cares empowers young girls through confidence-building beauty and wellness products tailored just for them." />
+    
+    <!-- DNS Prefetch for performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//api.sheety.co">
+    <link rel="dns-prefetch" href="//www.paypal.com">
+    
+    <!-- Preconnect for critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Swervy Cares - AI-Powered Self-Care Kits" />
+    <meta property="og:description" content="Empowering young girls through personalized self-care kits with AI recommendations. Every girl deserves to feel confident and valued." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://swervycares.org" />
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Swervy Cares - AI-Powered Self-Care Kits" />
+    <meta name="twitter:description" content="Empowering young girls through personalized self-care kits with AI recommendations." />
+    
+    <!-- Google Fonts with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Critical CSS for immediate render */
+      body { 
+        font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+        margin: 0; 
+        background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 50%, #f0fdfa 100%);
+      }
+      .loading-spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 3px solid #ff4dc6;
+        border-top: 3px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        z-index: 9999;
+      }
+      @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
+    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+  </body>
+</html>
