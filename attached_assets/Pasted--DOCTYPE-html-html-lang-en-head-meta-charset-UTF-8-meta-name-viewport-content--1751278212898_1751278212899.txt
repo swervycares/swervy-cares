@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Mission - Swervy Cares</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Swervy Cares</h1>
+    <p>Empowering girls through self-care</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mission.html">Our Mission</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="donation.html">Donate</a>
+      <a href="share.html">Share Our Story</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Our Mission</h2>
+    <p>Empowering young girls to embrace their uniqueness, build confidence, and practice self-care through personalized beauty and wellness kits.</p>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>Why We Started Swervy Cares</h3>
+      <p>At Swervy Cares, we are on a mission to empower young girls to embrace their individuality, build confidence, and practice self-love through personalized self-care kits. In a world where beauty standards often overshadow your true worth, we want to remind every girl that she is valued, seen, and celebrated exactly as she is.</p>
+      <p> Through direct community outreach, meaningful partnerships, and hands-on volunteerism, we are creating a movement where self-care becomes self-empowerment. We are not just delivering products, we are delivering hope, confidence, and a message that every girl deserves to feel beautiful, supported, and worthy of love.</p>
+    </div>
+
+    <div class="card">
+      <h3>Our Founder's Story</h3>
+      <div class="testimonial">
+        <p>"When I was younger, I often struggled with fitting into beauty standards that didn’t look like me. I realized early on that confidence isn’t something you find—it’s something you build. I wanted to create something that would help girls, especially those from underserved communities, feel celebrated for who they truly are."</p>
+        <p>"Swervy Cares is my way of using technology and cosmetics to give girls the tools I wish I had, tools that remind them they are worthy, capable, and beautiful just as they are. Through this platform, I hope to inspire the next generation of girls to embrace their confidence and lead fearlessly in every space they enter."</p>
+        <p><strong>- Aishni Raghuvanshi, Founder</strong></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>What We Believe</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div style="text-align: center; padding: 20px;">
+          <h4>🌟 Individuality</h4>
+          <p>Every girl is unique and beautiful in her own way. We celebrate differences and encourage self-expression.</p>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+          <h4>💪 Confidence</h4>
+          <p>True beauty comes from within. We help girls build confidence through self-care and positive affirmations.</p>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+          <h4>💝 Self-Love</h4>
+          <p>Taking care of yourself is an act of love. We teach girls that they deserve kindness, especially from themselves.</p>
+        </div>
+        <div style="text-align: center; padding: 20px;">
+          <h4>🤝 Community</h4>
+          <p>Together we're stronger. We build supportive communities where girls can lift each other up.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Our Impact Goals</h3>
+      <p>We're committed to making a meaningful difference in the lives of young girls. Here's what we're working toward:</p>
+      <ul style="font-size: 16px; line-height: 1.8;">
+        <li><strong>500 Kits by 2025:</strong> Deliver personalized self-care kits to girls who need them most</li>
+        <li><strong>Community Partnerships:</strong> Work with schools, community centers, and youth organizations</li>
+        <li><strong>Educational Programs:</strong> Develop workshops on self-care, confidence, and body positivity</li>
+        <li><strong>Mentorship Network:</strong> Connect young girls with positive role models and mentors</li>
+        <li><strong>Sustainable Growth:</strong> Build a self-sustaining organization that can continue this mission for years to come</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>What's in Our Kits</h3>
+      <p>Each Swervy Cares kit is thoughtfully curated and personalized based on the recipient's preferences. Our kits typically include:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+        <div>
+          <h4>💄 Beauty Essentials</h4>
+          <ul>
+            <li>Lip balm & lip oil</li>
+            <li>Lip scrub (scented)</li>
+            <li>Age-appropriate makeup</li>
+            <li>Lashes (if desired)</li>
+          </ul>
+        </div>
+        <div>
+          <h4>📝 Self-Care Items</h4>
+          <ul>
+            <li>Personalized affirmation cards</li>
+            <li>Self-care checklist</li>
+            <li>Confidence journal</li>
+            <li>Stickers and fun accessories</li>
+          </ul>
+        </div>
+        <div>
+          <h4>💌 Personal Touch</h4>
+          <ul>
+            <li>Handwritten note</li>
+            <li>Customized based on preferences</li>
+            <li>Age-appropriate selections</li>
+            <li>Beautiful, reusable packaging</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="text-align: center;">
+      <h3>Join Our Mission</h3>
+      <p>Ready to help us empower more girls? There are many ways to get involved:</p>
+      <div style="margin-top: 30px;">
+        <button onclick="window.location.href='volunteer.html'">Become a Volunteer</button>
+        <button class="btn-secondary" onclick="window.location.href='donation.html'">Make a Donation</button>
+        <button class="btn-tertiary" onclick="window.location.href='share.html'">Share Our Story</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p>Email: swervycares101@gmail.com</p>
+      <p>Phone: (650) 675-9847</p>
+      <p>Follow us on social media for updates and inspiration!</p>
+    </div>
+    <p>&copy; 2025 Swervy Cares. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+</body>
+</html>

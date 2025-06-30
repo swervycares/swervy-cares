@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swervy Cares - Empowering Girls Through Self-Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Swervy Cares</h1>
+    <p>Empowering girls through self-care</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mission.html">Our Mission</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="donation.html">Donate</a>
+      <a href="share.html">Share Our Story</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Building Confidence, One Kit at a Time</h2>
+    <p>We believe every girl deserves to feel confident and empowered. Our personalized self-care kits are designed to celebrate individuality and promote self-love.</p>
+    <button onclick="window.location.href='#request'">Request Your Kit</button>
+    <button class="btn-secondary" onclick="window.location.href='mission.html'">Learn More</button>
+  </section>
+
+  <section class="section" id="request">
+    <h2 style="text-align: center;">Request Your Swervy Cares Kit</h2>
+    <p style="text-align: center; max-width: 600px; margin: auto;">Tell us about yourself so we can create the perfect personalized kit for you.</p>
+    <form id="kitRequestForm" onsubmit="handleFormSubmission(event)">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="user_name" required />
+      </div>
+      <div class="form-group">
+        <label>Age Range</label>
+        <select name="user_age" required>
+          <option value="">Select your age range</option>
+          <option>6-10</option>
+          <option>11-13</option>
+          <option>14-16</option>
+          <option>17+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" name="user_address" required />
+      </div>
+      <div class="form-group">
+        <label>Email (optional)</label>
+        <input type="email" name="user_email" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number (optional)</label>
+        <input type="tel" name="user_phone" />
+      </div>
+      <div class="form-group">
+        <label>Lip Shade Preference</label>
+        <select name="user_shade" required>
+          <option value="">Select your shade</option>
+          <option>Coral</option>
+          <option>Rose</option>
+          <option>Nude</option>
+          <option>Berry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Lip Scent Preference</label>
+        <select name="user_scent" required>
+          <option value="">Select your scent</option>
+          <option>Vanilla</option>
+          <option>Floral</option>
+          <option>Citrus</option>
+          <option>Mint</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Lashes Preference</label>
+        <select name="user_lashes" required>
+          <option value="">Select your lash preference</option>
+          <option>Natural</option>
+          <option>Glam</option>
+          <option>No Lashes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Lip Oil</label>
+        <select name="user_oil" required>
+          <option value="">Confirm lip oil preference</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Lip Scrub (Scent Preferences)</label>
+        <input type="text" name="user_scrub" placeholder="e.g., Vanilla, Citrus, Berry" required />
+      </div>
+      <div class="form-group">
+        <label>What makes you feel confident?</label>
+        <textarea name="user_confidence" placeholder="Share what makes you feel your best..." required></textarea>
+      </div>
+      <div class="form-group consent-container">
+        <label class="consent-text">I consent to receiving a kit and understand my info will be used to create it.</label>
+        <input type="checkbox" required style="transform: scale(1.2);" />
+      </div>
+      <div class="form-group" style="text-align: right;">
+        <button type="submit">Submit Kit Request</button>
+      </div>
+    </form>
+    <div id="form-submitted-message" class="success-message hidden">
+      Thank you! Your kit request has been submitted. We'll be in touch soon!
+    </div>
+  </section>
+
+  <footer>
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p>Email: swervycares101@gmail.com</p>
+      <p>Phone: (650) 675-9847</p>
+      <p>Follow us on social media for updates and inspiration!</p>
+    </div>
+    <p>&copy; 2025 Swervy Cares. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script>
+    window.onload = function () {
+      document.getElementById('kitRequestForm').reset();
+    };
+
+    function handleFormSubmission(event) {
+      event.preventDefault();
+
+      const form = document.getElementById('kitRequestForm');
+      const formData = {
+        name: form.user_name.value,
+        age: form.user_age.value,
+        address: form.user_address.value,
+        email: form.user_email.value,
+        phone: form.user_phone.value,
+        shade: form.user_shade.value,
+        scent: form.user_scent.value,
+        lashes: form.user_lashes.value,
+        oil: form.user_oil.value,
+        scrub: form.user_scrub.value,
+        confidence: form.user_confidence.value
+      };
+
+      fetch('https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/swervy/sheet1', { // Correct tab name
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ sheet1: formData }) // Correct key: 'sheet1'
+      })
+        .then(response => response.json())
+        .then(result => {
+          form.style.display = 'none';
+          document.getElementById('form-submitted-message').classList.remove('hidden');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('There was an error submitting your request. Please try again.');
+        });
+    }
+  </script>
+</body>
+
+</html>
