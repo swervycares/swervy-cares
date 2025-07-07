@@ -13,7 +13,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "What's included in each self-care kit?",
-    answer: "Each kit is personalized, but typically includes: lip products (shade & scent of your choice), lashes (natural or glam), lip oil, scrubs, and 3-4 additional confidence-boosting items like journals, stickers, or accessories. Every kit contains 8-12 items total."
+    answer: "Each kit is personalized, but typically includes: lip products (shade & scent of your choice), lashes (natural or glam), lip oil, scrubs, and additional confidence-boosting items like journals, stickers, or accessories. Every kit contains 3-4 items total."
   },
   {
     question: "What age range do you serve?",

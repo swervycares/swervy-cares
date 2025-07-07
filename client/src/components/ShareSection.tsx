@@ -150,7 +150,7 @@ Thanks for taking the time to read this!
               <p className="opacity-90">Kits Goal for 2025</p>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">8-12</div>
+              <div className="text-4xl font-bold mb-2">3-4</div>
               <p className="opacity-90">Items per Kit</p>
             </div>
             <div>
