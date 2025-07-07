@@ -88,9 +88,23 @@ Swervy Cares is a modern web application for a nonprofit organization that empow
 - Environment variable support
 - Static file serving capability
 
+## Recent Changes
+- January 7, 2025: Major website enhancements completed
+  - Enhanced AI chat with 30+ color options and 16+ scent varieties
+  - Added comprehensive FAQ section with 10 common questions
+  - Enhanced donation page with multiple giving tiers ($15-$250+)
+  - Improved volunteer section with 6 detailed opportunity types
+  - Added smooth scrolling and loading animations
+  - Created testimonials and success stories in Share section
+  - Enhanced mission page with impact statistics and founder story
+  - Added analytics framework (optional - user declined setup)
+  - All forms now have professional loading states
+
 ## Changelog
-- June 30, 2025. Initial setup
+- June 30, 2025: Initial setup
+- January 7, 2025: Major feature enhancements and UX improvements
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Analytics: User prefers not to use Google Analytics tracking.
