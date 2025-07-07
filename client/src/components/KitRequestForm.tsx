@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -472,7 +473,14 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                       className="bg-gradient-to-r from-swervy-pink to-pink-500 hover:from-pink-500 hover:to-swervy-pink text-white font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                       size="lg"
                     >
-                      {submitMutation.isPending ? "Submitting..." : "🎁 Submit Kit Request"}
+                      {submitMutation.isPending ? (
+                        <div className="flex items-center space-x-2">
+                          <LoadingSpinner size="small" color="white" text="" />
+                          <span>Submitting your request...</span>
+                        </div>
+                      ) : (
+                        "🎁 Submit Kit Request"
+                      )}
                     </Button>
                   </div>
                 </div>

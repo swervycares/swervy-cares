@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 interface HeroSectionProps {
   onStartAIChat?: () => void;
