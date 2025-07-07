@@ -4,21 +4,36 @@ import { Calendar, Clock, Heart, MessageCircle } from "lucide-react";
 const blogPosts = [
   {
     id: 1,
-    title: "Why I Started Swervy Cares: My Personal Journey",
-    excerpt: "Growing up, I struggled with fitting into beauty standards that didn't look like me. Here's how that journey led me to create something beautiful for other young girls.",
-    content: `When I was younger, I often felt like I didn't fit the beauty standards I saw everywhere. The magazines, the movies, even the makeup aisles seemed designed for someone who wasn't me. I remember staring at myself in the mirror, wondering if I'd ever feel beautiful or confident.
+    title: "Why I Started Swervy Cares",
+    excerpt: "The personal journey that led me to create a platform for empowering young girls through self-care and confidence building.",
+    content: `Hi, I'm Aishni Raghuvanshi. I wanted to take a moment to share the story behind Swervy Cares, a project that I have recently dedicated a lot of my time to kick off.
 
-That feeling of not belonging in traditional beauty spaces is what drove me to create Swervy Cares. I realized that confidence isn't something you find—it's something you build, one small step at a time.
+In 2019, right before the world shut down because of COVID, I started making and selling cosmetics. I built a little website, opened social media pages, and slowly started building a small community of customers. I sold handmade lip glosses and lip scrubs that I carefully packaged in fun, creative containers. I was so proud of what I made. It was more than just a hobby, it was something I truly loved.
 
-The idea came to me during my junior year of college. I was studying computer science and had just learned about AI and machine learning. I thought: what if we could use technology to help girls discover their unique beauty instead of trying to fit into someone else's mold?
+Over time, Swervy Cosmetics started getting orders from all over the country. I even remember someone making a YouTube video reviewing the products. For three years, I ran my small business with so much passion and joy.
 
-I started small, buying a few lip products and testing different scents with friends. The joy on their faces when they found 'their' color was incredible. That's when I knew this had to be bigger than just a hobby.
+As I got older, I began exploring other interests, especially in AI and machine learning, and I eventually shifted my focus to those new paths. But even though my passions started to change, my love for beauty and self-care never really went away.
 
-Swervy Cares isn't just about makeup—it's about giving every girl the tools and confidence I wish I had when I was younger. Every kit we send is a reminder that you are worthy, you are beautiful, and you belong exactly as you are.`,
-    date: "January 5, 2025",
+At the same time, something kept sticking with me. I realized that not every girl had the chance to experience the little things I was creating, like lip gloss, scrubs, or cute makeup accessories. The things that made me feel good were things some girls didn't have access to at all. These aren't necessities in life, but they do bring joy. They help you feel confident. They're small, but they matter. And for girls who are already facing hard things, not having access to even these small luxuries felt unfair.
+
+That's what inspired me to start Swervy Cares. I wanted to create something that would give these beauty products to girls who might not be able to afford them. More importantly, I wanted these girls to know something they may not hear enough:
+
+💗 You're beautiful. You're worthy. You deserve this.
+
+Swervy Cares isn't just about giving away beauty products. It's about building confidence.
+
+Whether it's through beauty kits, self-care events, or just showing up for the community, my hope is that no girl feels left out because of her situation.
+
+This is only the beginning. I'm so grateful you're here with me.
+
+Thank you for supporting Swervy Cares. Let's keep spreading love: one lip gloss, one care package, one girl at a time.
+
+With love,
+Aishni Raghuvanshi`,
+    date: "May 15, 2025",
     readTime: "5 min read",
-    category: "Personal Journey",
-    image: "💝",
+    category: "Founder's Story",
+    image: "📝",
     featured: true
   },
   {

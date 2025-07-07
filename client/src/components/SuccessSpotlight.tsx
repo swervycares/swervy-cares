@@ -10,12 +10,12 @@ const monthlySpotlights = [
       location: "San Francisco, CA",
       story: "When I first got my Swervy Cares kit, I was struggling with confidence at my new high school. The AI chat helped me find the perfect coral lip shade that matched my personality. But what really changed everything was the confidence journal included in my kit. Writing down three things I was grateful for each day helped me see my own worth. Now I'm captain of the debate team and I credit that daily self-care routine with helping me find my voice.",
       before: "Shy, struggled to speak up in class, felt invisible at new school",
-      after: "Confident public speaker, debate team captain, positive self-image",
+      after: "Confident public speaker, positive self-image",
       favoriteProduct: "Coral Crush lip shade + Daily Confidence Journal",
-      quote: "Swervy Cares didn't just give me makeup - it gave me a daily reminder that I'm worth taking care of.",
+      quote: "Swervy Cares didn't just give me makeup. It gave me a daily reminder that I'm worth taking care of.",
       image: "🌸",
       achievements: ["Debate Team Captain", "Honor Roll Student", "Peer Mentor"],
-      timeframe: "6 months with Swervy Cares"
+      timeframe: "1 month with Swervy Cares"
     },
     honorableMentions: [
       {
