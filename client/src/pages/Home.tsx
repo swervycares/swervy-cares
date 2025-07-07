@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AIChatWidget from "@/components/AIChatWidget";
 import KitRequestForm from "@/components/KitRequestForm";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -41,6 +42,7 @@ export default function Home() {
         <Header />
         <HeroSection onStartAIChat={handleStartAIChat} />
         <KitRequestForm aiSuggestions={aiRecommendations} />
+        <FAQSection />
         <Footer />
         <AIChatWidget 
           isOpen={isChatOpen}
