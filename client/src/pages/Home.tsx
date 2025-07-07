@@ -3,6 +3,10 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import ImpactStats from "@/components/ImpactStats";
+import InteractiveMap from "@/components/InteractiveMap";
+import SuccessSpotlight from "@/components/SuccessSpotlight";
+import BlogSection from "@/components/BlogSection";
+import PartnershipShowcase from "@/components/PartnershipShowcase";
 import AIChatWidget from "@/components/AIChatWidget";
 import KitRequestForm from "@/components/KitRequestForm";
 import CallToAction from "@/components/CallToAction";
@@ -46,7 +50,11 @@ export default function Home() {
         <HeroSection onStartAIChat={handleStartAIChat} />
         <TestimonialsCarousel />
         <ImpactStats />
+        <InteractiveMap />
+        <SuccessSpotlight />
         <KitRequestForm aiSuggestions={aiRecommendations} />
+        <BlogSection />
+        <PartnershipShowcase />
         <CallToAction />
         <FAQSection />
         <Footer />
