@@ -29,28 +29,12 @@ export default function AIChatWidget({ isOpen, onClose, onRecommendations }: AIC
 
   const chatMutation = useMutation({
     mutationFn: async (messages: ChatMessage[]) => {
-      const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-      if (!apiKey) {
-        throw new Error('OpenAI API key not configured');
-      }
-
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      const response = await apiRequest('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({
-          model: 'gpt-4o',
-          messages: [
-            {
-              role: 'system',
-              content: `You are a friendly AI assistant for Swervy Cares, helping young girls discover their perfect self-care kit. Be encouraging, age-appropriate, and focus on self-care, confidence, and empowerment. Keep responses warm and supportive while gathering preferences for lip shades, scents, lashes, and oils.`
-            },
-            ...messages
-          ],
-          max_tokens: 200,
-        }),
+        body: JSON.stringify({ messages }),
       });
 
       if (!response.ok) {
@@ -58,7 +42,7 @@ export default function AIChatWidget({ isOpen, onClose, onRecommendations }: AIC
       }
 
       const data = await response.json();
-      return data.choices[0].message.content;
+      return data.message;
     },
     onSuccess: (message) => {
       setMessages(prev => [...prev, { role: 'assistant', content: message }]);
@@ -73,36 +57,12 @@ export default function AIChatWidget({ isOpen, onClose, onRecommendations }: AIC
 
   const recommendationsMutation = useMutation({
     mutationFn: async (chatHistory: ChatMessage[]) => {
-      const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-      if (!apiKey) {
-        throw new Error('OpenAI API key not configured');
-      }
-
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      const response = await apiRequest('/api/recommendations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({
-          model: 'gpt-4o',
-          messages: [
-            {
-              role: 'system',
-              content: `Based on the chat conversation, generate personalized self-care kit recommendations. Respond with JSON only in this exact format:
-              {
-                "lipShade": "specific color/shade name",
-                "scent": "specific scent name",
-                "lashes": "specific lash type",
-                "oil": "specific lip oil type",
-                "additionalItems": ["item1", "item2"],
-                "reasoning": "Brief explanation of why these items were chosen"
-              }`
-            },
-            ...chatHistory
-          ],
-          response_format: { type: "json_object" },
-        }),
+        body: JSON.stringify({ chatHistory }),
       });
 
       if (!response.ok) {
@@ -110,7 +70,7 @@ export default function AIChatWidget({ isOpen, onClose, onRecommendations }: AIC
       }
 
       const data = await response.json();
-      return JSON.parse(data.choices[0].message.content);
+      return data;
     },
     onSuccess: (recommendations) => {
       const recommendationMessage = `
