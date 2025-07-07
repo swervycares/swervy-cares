@@ -29,17 +29,7 @@ export default function AIChatWidget({ isOpen, onClose, onRecommendations }: AIC
 
   const chatMutation = useMutation({
     mutationFn: async (messages: ChatMessage[]) => {
-      const response = await apiRequest('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ messages }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get AI response');
-      }
+      const response = await apiRequest('POST', '/api/chat', { messages });
 
       const data = await response.json();
       return data.message;
@@ -57,17 +47,7 @@ export default function AIChatWidget({ isOpen, onClose, onRecommendations }: AIC
 
   const recommendationsMutation = useMutation({
     mutationFn: async (chatHistory: ChatMessage[]) => {
-      const response = await apiRequest('/api/recommendations', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ chatHistory }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get recommendations');
-      }
+      const response = await apiRequest('POST', '/api/recommendations', { chatHistory });
 
       const data = await response.json();
       return data;
