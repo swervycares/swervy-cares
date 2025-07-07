@@ -3,86 +3,86 @@ import { MapPin, Users, Heart, Calendar } from "lucide-react";
 
 const partnerships = [
   {
-    name: "Roosevelt Middle School",
-    location: "San Jose, CA",
+    name: "Local Middle School",
+    location: "Bay Area, CA",
     type: "Middle School",
-    studentsReached: 5,
-    established: "March 2025",
-    description: "Beginning our partnership with a pilot program focusing on self-care and confidence building for 6th-8th grade girls.",
-    impact: "First 5 participants report feeling more confident about expressing themselves.",
-    coordinator: "Ms. Sarah Rodriguez, School Counselor",
-    programs: ["Pilot Program", "Initial Kit Distributions", "Peer Mentoring Planning"],
-    testimonial: "We're excited to be working with Swervy Cares. The girls are already so enthusiastic about this program.",
+    studentsReached: 0,
+    established: "Coming Soon",
+    description: "We're actively seeking partnerships with middle schools to bring confidence-building programs to 6th-8th grade girls.",
+    impact: "Partnership opportunity available - contact us to discuss bringing Swervy Cares to your school.",
+    coordinator: "Open Position",
+    programs: ["Monthly Workshops", "Kit Distributions", "Peer Mentoring"],
+    testimonial: "Ready to partner with schools that want to help their students build confidence and self-worth.",
     image: "🏫",
     color: "from-pink-400 to-purple-500"
   },
   {
-    name: "Girls Who Code - Bay Area",
-    location: "Oakland, CA",
+    name: "STEM Organization",
+    location: "West Coast",
     type: "STEM Organization",
     studentsReached: 0,
-    established: "Planning Phase",
-    description: "Developing partnership to show that tech and beauty can coexist, encouraging girls to pursue STEM while embracing their personal style.",
-    impact: "Partnership in development - planning workshops for summer 2025.",
-    coordinator: "Jennifer Kim, Program Director",
-    programs: ["Tech + Beauty Workshops (Planning)", "Coding Sessions", "Founder Talks"],
-    testimonial: "We're excited to partner with Aishni to show our girls that you can be a successful engineer AND care about beauty and self-expression.",
+    established: "Coming Soon",
+    description: "Looking to partner with STEM organizations to show that tech and beauty can coexist, encouraging girls to pursue both.",
+    impact: "Partnership opportunity available - perfect for organizations wanting to integrate self-care into STEM education.",
+    coordinator: "Open Position",
+    programs: ["Tech + Beauty Workshops", "Coding Sessions", "Founder Talks"],
+    testimonial: "Excited to show girls they can be successful engineers AND embrace their personal style.",
     image: "💻",
     color: "from-blue-400 to-teal-500"
   },
   {
-    name: "YMCA Teen Center",
-    location: "Los Angeles, CA",
+    name: "Community Center",
+    location: "Target Cities",
     type: "Community Center",
     studentsReached: 0,
-    established: "Planning Phase",
-    description: "Developing after-school programs to provide safe space for self-care education and confidence building activities.",
-    impact: "Partnership discussions ongoing for fall 2025 launch.",
-    coordinator: "Maria Santos, Youth Program Manager",
-    programs: ["After-School Sessions (Planning)", "Summer Camps", "Leadership Training"],
-    testimonial: "We're looking forward to bringing Swervy Cares to our community. Our girls need positive programs like this.",
+    established: "Coming Soon",
+    description: "Seeking community centers interested in after-school programs that provide safe spaces for self-care education.",
+    impact: "Partnership opportunity available - ideal for centers serving young girls who need confidence support.",
+    coordinator: "Open Position",
+    programs: ["After-School Sessions", "Summer Camps", "Leadership Training"],
+    testimonial: "Ready to bring positive programming to communities where girls need support and encouragement.",
     image: "🏢",
     color: "from-teal-400 to-green-500"
   },
   {
-    name: "Phoenix High School",
-    location: "Phoenix, AZ",
+    name: "High School",
+    location: "Nationwide",
     type: "High School",
     studentsReached: 0,
-    established: "Planning Phase",
-    description: "Exploring integration into health and wellness curriculum, teaching self-care as part of overall mental health education.",
-    impact: "Curriculum planning in progress for 2025-2026 school year.",
-    coordinator: "Dr. Lisa Chen, Health Education Teacher",
-    programs: ["Curriculum Integration (Planning)", "Peer Support Groups", "Teacher Training"],
-    testimonial: "We're excited about the potential impact Swervy Cares could have on our students' confidence and well-being.",
+    established: "Coming Soon",
+    description: "Looking for high schools interested in integrating self-care into health and wellness curriculum.",
+    impact: "Partnership opportunity available - perfect for schools prioritizing student mental health and confidence.",
+    coordinator: "Open Position",
+    programs: ["Curriculum Integration", "Peer Support Groups", "Teacher Training"],
+    testimonial: "Excited to partner with schools that understand the connection between confidence and academic success.",
     image: "🎓",
     color: "from-orange-400 to-pink-500"
   },
   {
-    name: "Big Sisters of Greater Seattle",
-    location: "Seattle, WA",
+    name: "Youth Mentorship Program",
+    location: "Multiple States",
     type: "Mentorship Program",
     studentsReached: 0,
-    established: "Planning Phase",
-    description: "Planning to support mentor-mentee relationships with shared self-care activities and confidence-building exercises.",
-    impact: "Partnership development underway for summer 2025.",
-    coordinator: "Rachel Thompson, Program Coordinator",
-    programs: ["Mentor Training (Planning)", "Joint Activities", "Family Engagement"],
-    testimonial: "Self-care activities would give mentors and mentees something concrete to bond over while building important life skills.",
+    established: "Coming Soon",
+    description: "Seeking mentorship programs interested in incorporating self-care activities into mentor-mentee relationships.",
+    impact: "Partnership opportunity available - great for programs wanting to strengthen bonds through shared activities.",
+    coordinator: "Open Position",
+    programs: ["Mentor Training", "Joint Activities", "Family Engagement"],
+    testimonial: "Ready to provide mentors and mentees with concrete activities that build important life skills.",
     image: "👭",
     color: "from-purple-400 to-blue-500"
   },
   {
-    name: "Denver Public Library - Teen Space",
-    location: "Denver, CO",
+    name: "Public Library Teen Space",
+    location: "Various Cities",
     type: "Public Library",
     studentsReached: 0,
-    established: "Planning Phase",
-    description: "Planning workshops in library teen spaces, reaching girls who might not access traditional youth programs.",
-    impact: "Workshop series planning for summer 2025.",
-    coordinator: "Alex Rodriguez, Teen Services Librarian",
-    programs: ["Workshop Series (Planning)", "Resource Displays", "Peer Education"],
-    testimonial: "Libraries serve everyone, and programs like this help us truly support the whole person, not just academic needs.",
+    established: "Coming Soon",
+    description: "Looking for libraries interested in hosting workshops that reach girls who might not access traditional programs.",
+    impact: "Partnership opportunity available - perfect for libraries wanting to support the whole person, not just academic needs.",
+    coordinator: "Open Position",
+    programs: ["Workshop Series", "Resource Displays", "Peer Education"],
+    testimonial: "Excited to help libraries serve their communities with comprehensive support for young girls.",
     image: "📚",
     color: "from-green-400 to-blue-500"
   }
@@ -194,27 +194,27 @@ export default function PartnershipShowcase() {
             Our Amazing Partners
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Building partnerships with schools and organizations to create lasting impact in communities across the country.
+            Seeking partnerships with schools and organizations to create lasting impact in communities across the country.
           </p>
         </div>
 
         {/* Stats Overview */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-swervy-pink mb-2">1</div>
+            <div className="text-3xl font-bold text-swervy-pink mb-2">0</div>
             <div className="text-gray-600">Active Partners</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-swervy-turquoise mb-2">5</div>
-            <div className="text-gray-600">Students Reached</div>
+            <div className="text-3xl font-bold text-swervy-turquoise mb-2">6</div>
+            <div className="text-gray-600">Partnership Types Available</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-purple-500 mb-2">6</div>
-            <div className="text-gray-600">States Planned</div>
+            <div className="text-3xl font-bold text-purple-500 mb-2">Multiple</div>
+            <div className="text-gray-600">States Open</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-pink-500 mb-2">5</div>
-            <div className="text-gray-600">Partnerships Developing</div>
+            <div className="text-3xl font-bold text-pink-500 mb-2">Ready</div>
+            <div className="text-gray-600">To Launch</div>
           </div>
         </div>
 
