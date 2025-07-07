@@ -3,7 +3,7 @@ import { Calendar, Heart, Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const monthlySpotlights = [
   {
-    month: "January 2025",
+    month: "May 2025",
     featured: {
       name: "Maya Chen",
       age: 15,
@@ -35,66 +35,6 @@ const monthlySpotlights = [
         age: 12,
         achievement: "Organized a kit donation drive for younger girls",
         impact: "Raised funds for 15 additional kits for her community"
-      }
-    ]
-  },
-  {
-    month: "December 2024",
-    featured: {
-      name: "Isabella Rodriguez",
-      age: 14,
-      location: "Los Angeles, CA",
-      story: "I received my kit during a really tough time. My parents were going through a divorce and I felt like everything was falling apart. The cotton candy scented lip balm became my comfort item - I'd apply it before tests, presentations, or whenever I felt anxious. The motivational stickers went all over my school binders, reminding me daily that I'm strong and capable. Six months later, my grades improved from C's to A's and B's, and I finally felt like myself again.",
-      before: "Dealing with family stress, grades suffering, high anxiety",
-      after: "Improved academic performance, developed healthy coping strategies, increased resilience",
-      favoriteProduct: "Cotton Candy lip balm + Motivational sticker pack",
-      quote: "During the hardest time in my life, Swervy Cares reminded me that I'm worth taking care of, even when everything else felt broken.",
-      image: "💝",
-      achievements: ["Honor Roll Recovery", "Student Council Member", "Anxiety Management Success"],
-      timeframe: "8 months with Swervy Cares"
-    },
-    honorableMentions: [
-      {
-        name: "Jasmine T.",
-        age: 15,
-        achievement: "Overcame social anxiety to join drama club",
-        impact: "Now starring in school musical after building confidence through daily self-care"
-      },
-      {
-        name: "Chloe W.",
-        age: 13,
-        achievement: "Started mentoring younger students",
-        impact: "Helping 8 sixth-graders develop positive self-image"
-      }
-    ]
-  },
-  {
-    month: "November 2024",
-    featured: {
-      name: "Zara Patel",
-      age: 16,
-      location: "Phoenix, AZ",
-      story: "As one of the few South Asian girls at my school, I always felt like I didn't fit traditional beauty standards. The AI chat was amazing because it actually understood what colors would work with my skin tone. Getting my personalized kit with the perfect berry lip shade and sandalwood scent made me feel seen and beautiful for the first time. I started a cultural appreciation club at school and now help other girls of color embrace their unique beauty.",
-      before: "Felt excluded from beauty standards, lacked representation, low self-esteem",
-      after: "Embraces cultural identity, advocates for diversity, confident leader",
-      favoriteProduct: "Deep Berry lip shade + Sandalwood scented scrub",
-      quote: "Swervy Cares showed me that beauty comes in all colors and cultures. Now I help other girls see that too.",
-      image: "🌍",
-      achievements: ["Cultural Club Founder", "Diversity Advocate", "Scholarship Recipient"],
-      timeframe: "10 months with Swervy Cares"
-    },
-    honorableMentions: [
-      {
-        name: "Maria S.",
-        age: 14,
-        achievement: "Improved body image and self-acceptance",
-        impact: "Now volunteers with body positivity programs for teens"
-      },
-      {
-        name: "Aisha K.",
-        age: 17,
-        achievement: "Accepted to dream college with confidence essay",
-        impact: "Credits self-care routine with helping her write authentically about her journey"
       }
     ]
   }
