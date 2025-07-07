@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import ImpactStats from "@/components/ImpactStats";
 import AIChatWidget from "@/components/AIChatWidget";
 import KitRequestForm from "@/components/KitRequestForm";
+import CallToAction from "@/components/CallToAction";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
@@ -41,7 +44,10 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <HeroSection onStartAIChat={handleStartAIChat} />
+        <TestimonialsCarousel />
+        <ImpactStats />
         <KitRequestForm aiSuggestions={aiRecommendations} />
+        <CallToAction />
         <FAQSection />
         <Footer />
         <AIChatWidget 
