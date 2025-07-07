@@ -29,7 +29,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "How long does delivery take?",
-    answer: "We aim to deliver kits within 2-3 weeks of receiving your request. During busy periods, it may take up to 4 weeks. We'll send you updates about your kit's progress via email if you provide one."
+    answer: "We typically deliver kits within 5-7 days of receiving your request. During busy periods, it may take up to 2 weeks maximum. We'll send you updates about your kit's progress via email if you provide one."
   },
   {
     question: "Can I volunteer to help make kits?",
