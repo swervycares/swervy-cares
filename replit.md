@@ -89,16 +89,17 @@ Swervy Cares is a modern web application for a nonprofit organization that empow
 - Static file serving capability
 
 ## Recent Changes
-- January 7, 2025: Major website enhancements completed
-  - Enhanced AI chat with 30+ color options and 16+ scent varieties
-  - Added comprehensive FAQ section with 10 common questions
-  - Enhanced donation page with multiple giving tiers ($15-$250+)
-  - Improved volunteer section with 6 detailed opportunity types
-  - Added smooth scrolling and loading animations
-  - Created testimonials and success stories in Share section
-  - Enhanced mission page with impact statistics and founder story
-  - Added analytics framework (optional - user declined setup)
-  - All forms now have professional loading states
+- January 7, 2025: Major AI enhancements and blog updates completed
+  - Enhanced AI chat with age-appropriate responses (12-year-olds vs 16-year-olds)
+  - Added 30+ color options and 16+ scent varieties with thoughtful naming
+  - Implemented conversation memory that considers school context and confidence-building
+  - Updated blog with authentic founder story about Swervy Cosmetics journey (2019-2022)
+  - Enhanced AI recommendations with personalized reasoning showing understanding
+  - Updated Maya Chen success story timeline to 1 month
+  - Set Reflection and Community blog posts to "Coming Soon" status
+  - Updated realistic numbers: 7 girls helped, 0 active partnerships but templates ready
+  - Updated FAQ delivery time to 5-7 days (max 2 weeks)
+  - All partnership showcase shows "Coming Soon" with ready templates
 
 ## Changelog
 - June 30, 2025: Initial setup

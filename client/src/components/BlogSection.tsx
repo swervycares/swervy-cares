@@ -60,22 +60,10 @@ The best part? It's when I see messages from girls who say the AI really underst
   {
     id: 3,
     title: "Building Confidence: More Than Just Makeup",
-    excerpt: "Reflections on how self-care rituals create lasting confidence and why external beauty can help nurture inner strength.",
-    content: `One question I get often is: "Isn't this just about makeup? How does that really build confidence?"
-
-This question always makes me pause because it gets to the heart of what Swervy Cares is really about. Yes, we provide lip products and beauty items. But what we're really delivering is a ritual of self-care and a moment of feeling valued.
-
-Think about it: when someone takes time to personalize a kit just for you, when they consider your favorite colors and scents, when they include a handwritten note saying you're amazing—that's not just about the products. That's about being seen and valued.
-
-The confidence comes from the entire experience. It's the excitement of opening a package that was made just for you. It's looking in the mirror and thinking "I chose this color and it's perfect." It's having a daily self-care routine that reminds you to take care of yourself.
-
-I've learned that external beauty practices can be a gateway to inner confidence. When a girl finds a lip color that makes her smile, she's more likely to speak up in class. When she has a self-care routine, she's practicing the skill of prioritizing her own well-being.
-
-The real magic happens in the everyday moments. A 14-year-old texted us last month saying that applying her lip balm before school had become her "confidence moment"—a few seconds each morning where she reminded herself that she's beautiful and capable.
-
-That's what we're really building: daily practices that reinforce self-worth. The makeup is just the beginning.`,
-    date: "December 20, 2024",
-    readTime: "6 min read",
+    excerpt: "Coming Soon - Reflections on how self-care rituals create lasting confidence and why external beauty can help nurture inner strength.",
+    content: `This blog post is coming soon! Stay tuned for insights on how self-care rituals create lasting confidence and the deeper meaning behind our mission.`,
+    date: "Coming Soon",
+    readTime: "Coming Soon",
     category: "Reflection",
     image: "💭",
     featured: false
@@ -83,22 +71,10 @@ That's what we're really building: daily practices that reinforce self-worth. Th
   {
     id: 4,
     title: "The Power of Community: How Schools Are Embracing Self-Care",
-    excerpt: "Amazing partnerships with educators who understand that confidence and academic success go hand in hand.",
-    content: `One of the most beautiful parts of this journey has been working with schools and youth organizations. Initially, I wasn't sure how educators would respond to a program that includes makeup and beauty products.
-
-I was amazed by the response. Teachers and counselors immediately understood what we were really offering: tools for building self-esteem and personal care habits that support overall well-being.
-
-Ms. Rodriguez, a middle school counselor in San Jose, told me something that stuck with me: "We teach kids about nutrition for their bodies and study skills for their minds. Why wouldn't we teach them how to care for their emotional well-being too?"
-
-The school partnerships have taught me so much about the different challenges girls face. In some communities, access to basic personal care items is a real issue. In others, it's about having positive role models or learning that self-care isn't selfish.
-
-What's consistently amazing is watching girls support each other. During our workshop sessions, older students naturally mentor younger ones, sharing not just makeup tips but genuine encouragement. These connections often continue long after our visit.
-
-The feedback from educators has shaped our approach too. They've helped us understand how to make our materials age-appropriate, culturally sensitive, and aligned with school wellness programs.
-
-Seeing Swervy Cares become part of broader wellness initiatives in schools reminds me that we're not just delivering products—we're contributing to environments where girls can thrive.`,
-    date: "December 15, 2024",
-    readTime: "5 min read",
+    excerpt: "Coming Soon - Amazing partnerships with educators who understand that confidence and academic success go hand in hand.",
+    content: `This blog post is coming soon! Stay tuned for stories about our community partnerships and how schools are embracing self-care programs.`,
+    date: "Coming Soon",
+    readTime: "Coming Soon",
     category: "Community",
     image: "🏫",
     featured: false
