@@ -104,7 +104,7 @@ export default function FAQSection() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a 
-                href="mailto:hello@swervycares.org" 
+                href="mailto:aishniragh@icloud.com" 
                 className="bg-swervy-pink text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-500 transition-colors"
               >
                 Email Us
