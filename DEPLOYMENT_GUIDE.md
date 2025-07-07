@@ -73,11 +73,14 @@ jobs:
         VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
       run: npm run build
       
+    - name: Fix static deployment structure
+      run: node build-for-static-deployment.js
+      
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/public
+        publish_dir: ./dist
 ```
 
 ## 🌐 Access Your Website

@@ -71,7 +71,7 @@ jobs:
           VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
         run: |
           npm run build
-          cp -r dist/public/* dist/ || cp -r dist/* ./
+          node build-for-static-deployment.js
           touch dist/.nojekyll
           
       - name: Setup Pages
