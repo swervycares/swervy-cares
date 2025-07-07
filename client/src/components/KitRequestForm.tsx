@@ -256,11 +256,49 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                                 <SelectValue placeholder="Select your favorite shade" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent>
+                            <SelectContent className="max-h-60 overflow-auto">
+                              {/* Pinks & Corals */}
+                              <SelectItem value="Baby Pink">🌸 Baby Pink - Soft and sweet</SelectItem>
+                              <SelectItem value="Rose Pink">🌹 Rose Pink - Classic beauty</SelectItem>
+                              <SelectItem value="Hot Pink">💕 Hot Pink - Bold and fun</SelectItem>
                               <SelectItem value="Coral">🪸 Coral - Warm and vibrant</SelectItem>
-                              <SelectItem value="Rose">🌹 Rose - Classic and elegant</SelectItem>
-                              <SelectItem value="Nude">🤎 Nude - Natural and versatile</SelectItem>
-                              <SelectItem value="Berry">🫐 Berry - Bold and confident</SelectItem>
+                              <SelectItem value="Salmon">🐟 Salmon - Peachy pink</SelectItem>
+                              <SelectItem value="Magenta">💖 Magenta - Electric pink</SelectItem>
+                              <SelectItem value="Fuchsia">🦩 Fuchsia - Bright and daring</SelectItem>
+                              
+                              {/* Reds & Berries */}
+                              <SelectItem value="Cherry Red">🍒 Cherry Red - Classic red</SelectItem>
+                              <SelectItem value="Strawberry">🍓 Strawberry - Sweet red</SelectItem>
+                              <SelectItem value="Berry">🫐 Berry - Deep purple-red</SelectItem>
+                              <SelectItem value="Raspberry">🫰 Raspberry - Bright berry</SelectItem>
+                              <SelectItem value="Wine">🍷 Wine - Rich and elegant</SelectItem>
+                              <SelectItem value="Crimson">❤️ Crimson - Bold red</SelectItem>
+                              
+                              {/* Purples */}
+                              <SelectItem value="Lavender">💜 Lavender - Soft purple</SelectItem>
+                              <SelectItem value="Plum">🔮 Plum - Rich purple</SelectItem>
+                              <SelectItem value="Violet">💙 Violet - Bright purple</SelectItem>
+                              <SelectItem value="Grape">🍇 Grape - Deep purple</SelectItem>
+                              <SelectItem value="Lilac">🦄 Lilac - Light purple</SelectItem>
+                              
+                              {/* Oranges & Peaches */}
+                              <SelectItem value="Peach">🍑 Peach - Soft and sweet</SelectItem>
+                              <SelectItem value="Apricot">🧡 Apricot - Warm orange</SelectItem>
+                              <SelectItem value="Tangerine">🍊 Tangerine - Bright orange</SelectItem>
+                              <SelectItem value="Sunset Orange">🌅 Sunset Orange - Bold orange</SelectItem>
+                              
+                              {/* Neutrals & Nudes */}
+                              <SelectItem value="Nude">🤎 Nude - Natural beauty</SelectItem>
+                              <SelectItem value="Beige">🪵 Beige - Soft neutral</SelectItem>
+                              <SelectItem value="Taupe">🤍 Taupe - Cool neutral</SelectItem>
+                              <SelectItem value="Mauve">💕 Mauve - Purple-brown</SelectItem>
+                              <SelectItem value="Caramel">🍮 Caramel - Warm brown</SelectItem>
+                              
+                              {/* Fun & Unique */}
+                              <SelectItem value="Clear">✨ Clear - Natural shine</SelectItem>
+                              <SelectItem value="Gold">⭐ Gold - Shimmery glam</SelectItem>
+                              <SelectItem value="Bronze">🥉 Bronze - Warm metallic</SelectItem>
+                              <SelectItem value="Rose Gold">🌟 Rose Gold - Trendy metallic</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />
@@ -280,11 +318,32 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                                 <SelectValue placeholder="Select your favorite scent" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent>
+                            <SelectContent className="max-h-60 overflow-auto">
+                              {/* Sweet Treats */}
                               <SelectItem value="Vanilla">🍰 Vanilla - Sweet and comforting</SelectItem>
-                              <SelectItem value="Floral">🌸 Floral - Fresh and delicate</SelectItem>
-                              <SelectItem value="Citrus">🍊 Citrus - Bright and energizing</SelectItem>
+                              <SelectItem value="Cotton Candy">🍭 Cotton Candy - Sugary sweet</SelectItem>
+                              <SelectItem value="Cake Batter">🧁 Cake Batter - Birthday vibes</SelectItem>
+                              <SelectItem value="Caramel">🍮 Caramel - Rich and smooth</SelectItem>
+                              <SelectItem value="Root Beer">🥤 Root Beer - Unique and fun</SelectItem>
+                              
+                              {/* Fruity Favorites */}
+                              <SelectItem value="Strawberry">🍓 Strawberry - Fresh and sweet</SelectItem>
+                              <SelectItem value="Raspberry">🫰 Raspberry - Tart and juicy</SelectItem>
+                              <SelectItem value="Peach">🍑 Peach - Soft and summery</SelectItem>
+                              <SelectItem value="Watermelon">🍉 Watermelon - Fresh and cool</SelectItem>
+                              <SelectItem value="Banana">🍌 Banana - Tropical and creamy</SelectItem>
+                              <SelectItem value="Blueberry">🫐 Blueberry - Sweet and fresh</SelectItem>
+                              
+                              {/* Tropical & Exotic */}
+                              <SelectItem value="Coconut">🥥 Coconut - Tropical paradise</SelectItem>
+                              <SelectItem value="Pineapple">🍍 Pineapple - Tropical tang</SelectItem>
+                              <SelectItem value="Mango">🥭 Mango - Sweet tropical</SelectItem>
+                              
+                              {/* Classic & Fresh */}
                               <SelectItem value="Mint">🌿 Mint - Cool and refreshing</SelectItem>
+                              <SelectItem value="Citrus">🍊 Citrus - Bright and energizing</SelectItem>
+                              <SelectItem value="Floral">🌸 Floral - Fresh and delicate</SelectItem>
+                              <SelectItem value="Unscented">🚫 Unscented - No fragrance</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />
