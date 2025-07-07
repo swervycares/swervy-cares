@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const stats = [
-  { value: 7, label: "Girls Helped", suffix: "", icon: "💝" },
+  { value: 7, label: "Girls Helped This Month", suffix: "", icon: "💝" },
   { value: 100, label: "Satisfaction Rate", suffix: "%", icon: "⭐" },
   { value: 12, label: "Communities Planned", suffix: "", icon: "🌍" },
   { value: 25, label: "Kits Being Prepared", suffix: "", icon: "😊" }
