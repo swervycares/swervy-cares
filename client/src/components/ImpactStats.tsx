@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 const stats = [
-  { value: 500, label: "Girls Helped", suffix: "+", icon: "💝" },
-  { value: 95, label: "Satisfaction Rate", suffix: "%", icon: "⭐" },
-  { value: 50, label: "Communities Reached", suffix: "+", icon: "🌍" },
-  { value: 1000, label: "Smiles Created", suffix: "+", icon: "😊" }
+  { value: 7, label: "Girls Helped", suffix: "", icon: "💝" },
+  { value: 100, label: "Satisfaction Rate", suffix: "%", icon: "⭐" },
+  { value: 12, label: "Communities Planned", suffix: "", icon: "🌍" },
+  { value: 25, label: "Kits Being Prepared", suffix: "", icon: "😊" }
 ];
 
 function CountingNumber({ target, suffix }: { target: number; suffix: string }) {
@@ -35,7 +35,7 @@ export default function ImpactStats() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Impact So Far</h2>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Together, we're making a real difference in young girls' lives across communities
+            We're just getting started, but already making a real difference in young girls' lives
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export default function ImpactStats() {
 
         <div className="text-center mt-12">
           <p className="text-lg text-white/90">
-            Every kit delivered represents a young girl who now feels more confident and valued
+            Every kit we're preparing represents a young girl who will feel more confident and valued
           </p>
         </div>
       </div>

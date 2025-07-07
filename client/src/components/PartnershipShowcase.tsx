@@ -6,13 +6,13 @@ const partnerships = [
     name: "Roosevelt Middle School",
     location: "San Jose, CA",
     type: "Middle School",
-    studentsReached: 120,
-    established: "September 2024",
-    description: "Monthly wellness workshops focusing on self-care and confidence building for 6th-8th grade girls.",
-    impact: "Improved self-reported confidence scores by 40% among participating students.",
+    studentsReached: 5,
+    established: "March 2025",
+    description: "Beginning our partnership with a pilot program focusing on self-care and confidence building for 6th-8th grade girls.",
+    impact: "First 5 participants report feeling more confident about expressing themselves.",
     coordinator: "Ms. Sarah Rodriguez, School Counselor",
-    programs: ["Monthly Workshops", "Kit Distributions", "Peer Mentoring"],
-    testimonial: "The girls look forward to Swervy Cares visits every month. It's amazing to see them support each other and grow in confidence.",
+    programs: ["Pilot Program", "Initial Kit Distributions", "Peer Mentoring Planning"],
+    testimonial: "We're excited to be working with Swervy Cares. The girls are already so enthusiastic about this program.",
     image: "🏫",
     color: "from-pink-400 to-purple-500"
   },
@@ -20,13 +20,13 @@ const partnerships = [
     name: "Girls Who Code - Bay Area",
     location: "Oakland, CA",
     type: "STEM Organization",
-    studentsReached: 85,
-    established: "October 2024",
-    description: "Partnering to show that tech and beauty can coexist, encouraging girls to pursue STEM while embracing their personal style.",
-    impact: "Increased interest in AI/ML among participants by 60% after learning about our tech stack.",
+    studentsReached: 0,
+    established: "Planning Phase",
+    description: "Developing partnership to show that tech and beauty can coexist, encouraging girls to pursue STEM while embracing their personal style.",
+    impact: "Partnership in development - planning workshops for summer 2025.",
     coordinator: "Jennifer Kim, Program Director",
-    programs: ["Tech + Beauty Workshops", "Coding Sessions", "Founder Talks"],
-    testimonial: "Aishni shows our girls that you can be a successful engineer AND care about beauty and self-expression. It's so inspiring.",
+    programs: ["Tech + Beauty Workshops (Planning)", "Coding Sessions", "Founder Talks"],
+    testimonial: "We're excited to partner with Aishni to show our girls that you can be a successful engineer AND care about beauty and self-expression.",
     image: "💻",
     color: "from-blue-400 to-teal-500"
   },
@@ -34,13 +34,13 @@ const partnerships = [
     name: "YMCA Teen Center",
     location: "Los Angeles, CA",
     type: "Community Center",
-    studentsReached: 150,
-    established: "August 2024",
-    description: "After-school programs providing safe space for self-care education and confidence building activities.",
-    impact: "90% of participants report feeling more confident about starting high school.",
+    studentsReached: 0,
+    established: "Planning Phase",
+    description: "Developing after-school programs to provide safe space for self-care education and confidence building activities.",
+    impact: "Partnership discussions ongoing for fall 2025 launch.",
     coordinator: "Maria Santos, Youth Program Manager",
-    programs: ["After-School Sessions", "Summer Camps", "Leadership Training"],
-    testimonial: "These girls come from challenging backgrounds. Swervy Cares gives them something positive to focus on and helps them see their own worth.",
+    programs: ["After-School Sessions (Planning)", "Summer Camps", "Leadership Training"],
+    testimonial: "We're looking forward to bringing Swervy Cares to our community. Our girls need positive programs like this.",
     image: "🏢",
     color: "from-teal-400 to-green-500"
   },
@@ -48,13 +48,13 @@ const partnerships = [
     name: "Phoenix High School",
     location: "Phoenix, AZ",
     type: "High School",
-    studentsReached: 200,
-    established: "November 2024",
-    description: "Integrated into health and wellness curriculum, teaching self-care as part of overall mental health education.",
-    impact: "Decreased anxiety reports by 25% among program participants during exam periods.",
+    studentsReached: 0,
+    established: "Planning Phase",
+    description: "Exploring integration into health and wellness curriculum, teaching self-care as part of overall mental health education.",
+    impact: "Curriculum planning in progress for 2025-2026 school year.",
     coordinator: "Dr. Lisa Chen, Health Education Teacher",
-    programs: ["Curriculum Integration", "Peer Support Groups", "Teacher Training"],
-    testimonial: "We've seen remarkable changes in our students. They're more engaged and confident, which translates to better academic performance.",
+    programs: ["Curriculum Integration (Planning)", "Peer Support Groups", "Teacher Training"],
+    testimonial: "We're excited about the potential impact Swervy Cares could have on our students' confidence and well-being.",
     image: "🎓",
     color: "from-orange-400 to-pink-500"
   },
@@ -62,13 +62,13 @@ const partnerships = [
     name: "Big Sisters of Greater Seattle",
     location: "Seattle, WA",
     type: "Mentorship Program",
-    studentsReached: 65,
-    established: "December 2024",
-    description: "Supporting mentor-mentee relationships with shared self-care activities and confidence-building exercises.",
-    impact: "Strengthened 95% of mentor-mentee relationships through shared self-care activities.",
+    studentsReached: 0,
+    established: "Planning Phase",
+    description: "Planning to support mentor-mentee relationships with shared self-care activities and confidence-building exercises.",
+    impact: "Partnership development underway for summer 2025.",
     coordinator: "Rachel Thompson, Program Coordinator",
-    programs: ["Mentor Training", "Joint Activities", "Family Engagement"],
-    testimonial: "The self-care activities give mentors and mentees something concrete to bond over while building important life skills.",
+    programs: ["Mentor Training (Planning)", "Joint Activities", "Family Engagement"],
+    testimonial: "Self-care activities would give mentors and mentees something concrete to bond over while building important life skills.",
     image: "👭",
     color: "from-purple-400 to-blue-500"
   },
@@ -76,12 +76,12 @@ const partnerships = [
     name: "Denver Public Library - Teen Space",
     location: "Denver, CO",
     type: "Public Library",
-    studentsReached: 75,
-    established: "January 2025",
-    description: "Hosted workshops in library teen spaces, reaching girls who might not access traditional youth programs.",
-    impact: "Increased teen library engagement by 30% following workshop series.",
+    studentsReached: 0,
+    established: "Planning Phase",
+    description: "Planning workshops in library teen spaces, reaching girls who might not access traditional youth programs.",
+    impact: "Workshop series planning for summer 2025.",
     coordinator: "Alex Rodriguez, Teen Services Librarian",
-    programs: ["Workshop Series", "Resource Displays", "Peer Education"],
+    programs: ["Workshop Series (Planning)", "Resource Displays", "Peer Education"],
     testimonial: "Libraries serve everyone, and programs like this help us truly support the whole person, not just academic needs.",
     image: "📚",
     color: "from-green-400 to-blue-500"
@@ -194,27 +194,27 @@ export default function PartnershipShowcase() {
             Our Amazing Partners
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Working together with schools and organizations to create lasting impact in communities across the country.
+            Building partnerships with schools and organizations to create lasting impact in communities across the country.
           </p>
         </div>
 
         {/* Stats Overview */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-swervy-pink mb-2">{partnerships.length}</div>
+            <div className="text-3xl font-bold text-swervy-pink mb-2">1</div>
             <div className="text-gray-600">Active Partners</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-swervy-turquoise mb-2">{totalStudents}</div>
+            <div className="text-3xl font-bold text-swervy-turquoise mb-2">5</div>
             <div className="text-gray-600">Students Reached</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
             <div className="text-3xl font-bold text-purple-500 mb-2">6</div>
-            <div className="text-gray-600">States</div>
+            <div className="text-gray-600">States Planned</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-            <div className="text-3xl font-bold text-pink-500 mb-2">95%</div>
-            <div className="text-gray-600">Satisfaction Rate</div>
+            <div className="text-3xl font-bold text-pink-500 mb-2">5</div>
+            <div className="text-gray-600">Partnerships Developing</div>
           </div>
         </div>
 
