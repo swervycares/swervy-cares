@@ -1,12 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import ImpactStats from "@/components/ImpactStats";
-import InteractiveMap from "@/components/InteractiveMap";
-import SuccessSpotlight from "@/components/SuccessSpotlight";
-import BlogSection from "@/components/BlogSection";
-import PartnershipShowcase from "@/components/PartnershipShowcase";
 import AIChatWidget from "@/components/AIChatWidget";
 import KitRequestForm from "@/components/KitRequestForm";
 import CallToAction from "@/components/CallToAction";
@@ -48,15 +43,25 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <HeroSection onStartAIChat={handleStartAIChat} />
-        <TestimonialsCarousel />
         <ImpactStats />
-        <InteractiveMap />
-        <SuccessSpotlight />
-        <KitRequestForm aiSuggestions={aiRecommendations} />
-        <BlogSection />
-        <PartnershipShowcase />
         <CallToAction />
         <FAQSection />
+        
+        {/* Kit Request Form */}
+        <section id="request" className="py-20 bg-white">
+          <div className="max-w-2xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Request Your Self-Care Kit
+              </h2>
+              <p className="text-lg text-gray-600">
+                Tell us about yourself and we'll create a personalized kit just for you
+              </p>
+            </div>
+            <KitRequestForm aiSuggestions={aiRecommendations} />
+          </div>
+        </section>
+        
         <Footer />
         <AIChatWidget 
           isOpen={isChatOpen}

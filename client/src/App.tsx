@@ -11,6 +11,9 @@ import Mission from "@/pages/Mission";
 import Volunteer from "@/pages/Volunteer";
 import Donate from "@/pages/Donate";
 import Share from "@/pages/Share";
+import Blog from "@/pages/Blog";
+import Communities from "@/pages/Communities";
+import Stories from "@/pages/Stories";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +27,9 @@ function Router() {
       <Route path="/volunteer" component={Volunteer} />
       <Route path="/donate" component={Donate} />
       <Route path="/share" component={Share} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/communities" component={Communities} />
+      <Route path="/stories" component={Stories} />
       <Route component={NotFound} />
     </Switch>
   );
