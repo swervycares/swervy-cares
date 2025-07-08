@@ -1,0 +1,488 @@
+Last login: Mon Jul  7 20:28:58 on ttys000
+aishniraghuvanshi@Aishnis-Laptop-4 ~ % cs desktop
+zsh: command not found: cs
+aishniraghuvanshi@Aishnis-Laptop-4 ~ % cd desktop
+aishniraghuvanshi@Aishnis-Laptop-4 desktop % ls
+IMG_3294.HEIC
+IMG_3295.HEIC
+IMG_3296.HEIC
+IMG_3297.HEIC
+Photo on 7-24-24 at 3.43 PM.jpg
+Photo on 7-24-24 at 3.44 PM #2.jpg
+Photo on 7-24-24 at 3.44 PM #3.jpg
+Screenshot 2024-05-27 at 6.14.12 PM.png
+Screenshot 2024-08-17 at 10.02.29 PM.png
+Screenshot 2025-07-03 at 11.59.03 AM.png
+Screenshot 2025-07-07 at 8.10.18 PM.png
+index.html
+swervy.html
+test_agent.py
+aishniraghuvanshi@Aishnis-Laptop-4 desktop % cd downloads
+cd: no such file or directory: downloads
+aishniraghuvanshi@Aishnis-Laptop-4 desktop % cd Downloads
+cd: no such file or directory: Downloads
+aishniraghuvanshi@Aishnis-Laptop-4 desktop % cd ~/Downloads
+aishniraghuvanshi@Aishnis-Laptop-4 Downloads % ls
+02DDFB33-B7BE-44C6-8A4B-CB3ECE87B08C-63869-00001D06A1DA2C54.jpg
+1.12A.pdf
+1.12B.pdf
+1.12pdf.pdf
+1.14.pdf
+1.3.2-BA.xlsx
+10B work and energy CP.pdf
+11A conservation of momentum.pdf
+11B inelastic collision-1.pdf
+11B inelastic collision.pdf
+11C elastic collision.pdf
+1A motion graphs (1).pdf
+1A motion graphs.pdf
+1st semester CP review-1.pdf
+2.4 scratch paper.pdf
+2024-08-13---Aida-Ismaiel---9405536208070691903834.pdf
+20477C0D-B2F1-431C-9055-3046995F7998-63869-00001D094A5B9FC0.jpg
+26-1 sound.pdf
+3B motion graphs CP AP-1.pdf
+4760D377-E831-4122-A349-7D2901A1690D-63869-00001D09F1059898.jpg
+4A acceleration on a ramp CP AP.pdf
+5-1 friction worksheet.pdf
+5A newton 2nd law CP.pdf
+6AF94DD5-C5AC-48A7-8040-952142FBD75D-63869-00001D063BE18211.jpg
+6EE3CDD0-0518-497A-A7E4-E1490D524CCB-63869-00001D09A9879C4F.jpg
+77328-powerpoint presentation pros and cons.pptx
+8-1 work energy worksheet.pdf
+8-2 energy conservation worksheet p 1-1.pdf
+9A57EAE5-C1EB-44AD-A4CC-F77BE5D22689-63869-00001D08A227CD3C.jpg
+A1020004-17E46BF2145A3FC1-76CE2BD4
+ADBBC230-37FA-454A-B1EF-D2FDB1F9E4D0-63869-00001D0693F1B317 (1).jpg
+ADBBC230-37FA-454A-B1EF-D2FDB1F9E4D0-63869-00001D0693F1B317.jpg
+AF Poster Character Poster Writeup.odt
+AI_Generated_Image_2025-03-19.png
+AP World History Notes Template (1).pdf
+AP World History Notes Template (2).pdf
+AP World History Notes Template (3).pdf
+AP World History Notes Template.pdf
+Activity find earthquake epicenter.pdf
+Af Rationale.docx
+Aishni Raghuvanshi - Python_4 (while) (SE).docx
+Aishni Raghuvanshi- fahrenheit 451 socratic seminar.docx
+Aishni's Resume recent.docx (1).pdf
+Aishni's Resume recent.docx (2).pdf
+Aishni's Resume recent.docx (3).pdf
+Aishni's Resume recent.docx (4).pdf
+Aishni's Resume recent.docx.pdf
+Aishni- Document Analysis_ Factory Life AP World History.pdf
+Aishnis Kumon Resume.docx.pdf
+An ABC, for Baby Patriots_ aishni raghuvanshi .pdf
+Animal Farm Final Wrd (1).docx
+Animal Farm Final Wrd.docx
+Athletic clearance 2024-2025 .pdf
+BP 3.docx
+BP 4.docx
+CCIR-Application-Package-Summer-2024
+CCIR-Application-Package-Summer-2024 (1)
+CCIR-Application-Package-Summer-2024 (1) 2
+CCIR-Application-Package-Summer-2024 (1).zip
+CCIR-Application-Package-Summer-2024.zip
+CEDB5D40-F5B6-4488-9580-61EAF5878B3F-63869-00001D07E7796438.jpg
+CP circular motion worksheet.pdf
+CP gravity phet 2.pdf
+CP motion (student).pdf
+CP newton 3rd law 10-28.pdf
+Causes for Atlantic Revolution - Historical Themes (1).pdf
+Causes for Atlantic Revolution - Historical Themes.pdf
+Chapter 7 Maritime Technological Innovations and Exploration.pdf
+Conceptual Physics Syllabus 2024-2025.pdf
+Copy of Blank Newspaper #9245.pdf
+Copy of What were the long-term causes of World War I_.pdf
+Copy of Why did Japan industrialize during the Meiji Period_ How did industrialization affect Japan_.pdf
+DALL·E 2025-03-18 22.04.37 - A professional event flyer for high school students with a modern and engaging design. The background features the Golden Gate Bridge in San Francisco.webp
+DB2C64E1-8351-470A-8FC4-1C767F151EB3-63869-00001D0687EBA1BE.jpg
+DE9B246C-AC6D-4D3F-A1C5-44250DD2E116-63869-00001D095AB1C348.jpg
+DSATL5.pdf
+Day .pdf
+Day 2.pdf
+Day 3 (1).pdf
+Day 3.pdf
+Discord.dmg
+DubbingAIMacOS_v1.5.2_2024.08.16.20.10_Release.pkg
+E545B5C7-039E-4EE8-BF3A-83F158457976-63869-00001D0A3ECF4B12.jpg
+E909008E-5902-4676-9457-2AF9FAD075E7-63869-00001D09BBF7E5ED.jpg
+ESUHSD Student Lab Safety Contract - 2024-2025.pdf
+EV WIS (1).png
+EV WIS (2).png
+EV WIS (3).png
+EV WIS (4).png
+EV WIS.png
+EVC Special Admit Form.pdf
+EVC Special Admit Form_encrypted_.pdf
+Electromagnet lab.pdf
+F451 Essay Outline.docx
+Global Tapestry Review, 1200-1450 (1).wav
+Global Tapestry Review, 1200-1450 (2).wav
+Global Tapestry Review, 1200-1450 (3).wav
+Global Tapestry Review, 1200-1450 (4).wav
+Global Tapestry Review, 1200-1450.wav
+How did the Tokugawa Shogunate gain, consolidate, and maintain power in Japan_-Manya Venkataraman.pdf
+IMG_1335.JPG
+IMG_1347.JPG
+IMG_1349.JPG
+IMG_1351.JPG
+IMG_1369.JPG
+IMG_1380.JPG
+IMG_2266.pdf
+IMG_6444 (1).heic
+IMG_6444.heic
+IMG_7729 (1).psd
+IMG_7729 (2).psd
+IMG_7729.psd
+IMG_7730.psd
+Install Respondus LockDown Browser (x64c) 511146648 2.pkg
+Install Respondus LockDown Browser (x64c) 511146648.pkg
+Install Respondus LockDown Browser OEM (x64c) 2.pkg
+Install Respondus LockDown Browser OEM (x64c) 3.pkg
+Install Respondus LockDown Browser OEM (x64c) 4.pkg
+Install Respondus LockDown Browser OEM (x64c).pkg
+Install Spotify.app
+InstallLDBOEM (1).zip
+InstallLDBOEM.zip
+InstallLDBPackage64c-2-1-2-05.zip
+Invoice-F961E421-0002 (1).pdf
+Invoice-F961E421-0002.pdf
+Kami Export - 10B work and energy CP.pdf
+Kami Export - 11A conservation of momentum.pdf
+Kami Export - 11B inelastic collision.pdf
+Kami Export - 11C elastic collision.pdf
+Kami Export - 26-1 sound (1).pdf
+Kami Export - 26-1 sound (2).pdf
+Kami Export - 26-1 sound.pdf
+Kami Export - 3B motion graphs CP AP-1 (1) (1).pdf
+Kami Export - 3B motion graphs CP AP-1 (1).pdf
+Kami Export - 3B motion graphs CP AP-1.pdf
+Kami Export - 4A acceleration on a ramp CP AP (1) (1).pdf
+Kami Export - 4A acceleration on a ramp CP AP (1).pdf
+Kami Export - 4A acceleration on a ramp CP AP.pdf
+Kami Export - 5-1 friction worksheet.pdf
+Kami Export - 5A newton 2nd law CP.pdf
+Kami Export - 8-1 work energy worksheet.pdf
+Kami Export - 8-2 energy conservation worksheet p 1-1.pdf
+Kami Export - CP circular motion worksheet (1).pdf
+Kami Export - CP circular motion worksheet.pdf
+Kami Export - CP gravity phet 2.pdf
+Kami Export - Conceptual Physics Syllabus 2024-2025 (1).pdf
+Kami Export - Conceptual Physics Syllabus 2024-2025.pdf
+Kami Export - ESUHSD Student Lab Safety Contract - 2024-2025 (1).pdf
+Kami Export - ESUHSD Student Lab Safety Contract - 2024-2025 (2).pdf
+Kami Export - ESUHSD Student Lab Safety Contract - 2024-2025.pdf
+Kami Export - Electromagnet lab.pdf
+Kami Export - build your atom phet (part 1).pdf
+Kami Export - build your atom phet (part 2).pdf
+Kami Export - charges and fields phet (1).pdf
+Kami Export - circuit lab (warm up) 2025 (1).pdf
+Kami Export - circuit lab (warm up) 2025 (2).pdf
+Kami Export - circuit lab (warm up) 2025 (3) (1).pdf
+Kami Export - circuit lab (warm up) 2025 (3).pdf
+Kami Export - circuit lab (warm up) 2025.pdf
+Kami Export - design project crash barrier CP-2.pdf
+Kami Export - electric circuit phet (warm up) (1).pdf
+Kami Export - electric circuit phet (warm up).pdf
+Kami Export - electric force phet.pdf
+Kami Export - electromagnet phet.pdf
+Kami Export - inverse square law worksheet (1).pdf
+Kami Export - inverse square law worksheet.pdf
+Kami Export - net force worksheet-1 (1) (1).pdf
+Kami Export - net force worksheet-1 (1) (2).pdf
+Kami Export - net force worksheet-1 (1).pdf
+Kami Export - net force worksheet-1.pdf
+Kami Export - newton 3rd law worksheet (1).pdf
+Kami Export - newton 3rd law worksheet.pdf
+Kami Export - phet collision.pdf
+Kami Export - phet forces and motion (1).pdf
+Kami Export - phet forces and motion.pdf
+Kami Export - phet friction.pdf
+Kami Export - phet pendulum energy (1).pdf
+Kami Export - phet pendulum energy.pdf
+Kami Export - phet wave on a string (1).pdf
+Kami Export - phet wave on a string.pdf
+Kami Export - reflection and refraction PhET.pdf
+Kami Export - series parallel circuit lab (1).pdf
+Kami Export - series parallel circuit lab.pdf
+Kami Export - skateboard design phet.pdf
+Kami Export - system force and acceleration worksheet (1).pdf
+Kami Export - system force and acceleration worksheet.pdf
+Kami Export - vibration and wave worksheet.pdf
+Kami Export - wave superposition worksheet.pdf
+Kami Export - zappy phet.pdf
+LP_IM_2023-24_Raghuvanshi_Aishni_8570 (1).pdf
+LP_IM_2023-24_Raghuvanshi_Aishni_8570 (2).pdf
+LP_IM_2023-24_Raghuvanshi_Aishni_8570-2 (1).pdf
+LP_IM_2023-24_Raghuvanshi_Aishni_8570-2.pdf
+LP_IM_2023-24_Raghuvanshi_Aishni_8570.pdf
+La tech spanish.pdf
+Martin Luther’s 95 Theses - Aishni.pdf
+Messages-Wrapped-0.0.10-arm64.dmg
+Momentum homework.pdf
+Notes Part 2 Topic 2.13 Exponential and Logarithmic Inverses and Inequalities.pdf
+OD paragraph (1).docx
+OD paragraph.docx
+Ollama 2.app
+Ollama-darwin.zip
+Ollama.app
+Part 1.MP4
+Part 11.MP4
+Part 9.MP4
+PodcastPals (1).zip
+PodcastPals.zip
+ProQuestDocuments-2024-06-21 (1).pdf
+ProQuestDocuments-2024-06-21.pdf
+Report (1).docx
+Report (1).pdf
+Report (2).docx
+Report (2).pdf
+Report.docx
+Report.pdf
+Review Unit 2_ Networks of Exchange, 1200-1450.pdf
+Review Unit 4_ Transoceanic Interconnections, 1450-1750.pdf
+Review Unit 5_ Revolutions, 1750-1900.pdf
+Roblox.dmg
+Scalability
+Scalability (1)
+Scalability (1) 2
+Scalability (1) 3
+Scalability (1).zip
+Scalability (2)
+Scalability (2) 2
+Scalability (2).zip
+Scalability 2
+Scalability.zip
+Screenshot 2024-11-07 at 11.02.54 AM (1).png
+Screenshot 2024-11-07 at 11.02.54 AM.png
+Speed of sound lab.pdf
+Test_3_Socrative_Review_-_Vectors_-_Blank.pdf
+The Green Revolution - Aishni Raghuvanshi  (1).pdf
+The Green Revolution - Aishni Raghuvanshi .pdf
+The Personal a and Adverbs.pdf
+Title_ Main Character Syndrome_ Desi Edition.pdf
+Treaty of Nanking- Aishni Raghuvanshi .pdf
+Unit 1 Study Guide.docx
+Unit 2 Study Guide.docx
+Unit 4 Study Guide.docx
+Unit 5 Study Guide_ Aishni Raghuvanshi (1).pdf
+Unit 5 Study Guide_ Aishni Raghuvanshi.pdf
+Unit 6 Study Guide_ Aishni Raghuvanshi .pdf
+Unit 7_ Global Conflict, 1900-Present.pdf
+Untitled Project.jpg
+Untitled document.pdf
+VSCode-darwin-universal (1).zip
+VSCode-darwin-universal (2).zip
+VSCode-darwin-universal.zip
+Visual Studio Code 2.app
+Visual Studio Code 3.app
+Visual Studio Code 4.app
+Visual Studio Code 5.app
+Visual Studio Code 6.app
+Visual Studio Code 7.app
+Visual Studio Code.app
+WHAP Battle of the Somme Document Analysis .pdf
+WHAP Cold War Document Analysis_ Aishni Raghuvanshi .pdf
+WHAP Partition of India Document Analysis - Aishni Raghuvanshi (1).docx
+WHAP Partition of India Document Analysis - Aishni Raghuvanshi.docx
+Warm Up_  Solving Logarithmic Inequalities Key.pdf
+What was the Cold War_ - Aishni Raghuvanshi .pdf
+Why has there been an increase in globalization in the 20th and 21st centuries_ (1).pdf
+Why has there been an increase in globalization in the 20th and 21st centuries_.pdf
+Worksheet C Topic 2.13 Exponential  and Logarithmic Inequalities and Inverses Key_.pdf
+Worksheet C Topic 2.13 Exponential and Logarithmic Inequalities and Inverses.pdf
+Zoom.pkg
+_Do the economic benefits of globalization outweigh the costs_.pdf
+_IDC Officer Application 2025-2026 (1).pdf
+_IDC Officer Application 2025-2026.pdf
+_Review Unit 1_ The Global Tapestry Review, 1200-1450 (1).pdf
+_Review Unit 1_ The Global Tapestry Review, 1200-1450.pdf
+_Review Unit 3_ Land-Based Empires, 1450-1750.pdf
+_Review Unit 6_ Consequences of Industrialization, 1750-1900.pdf
+_Review Unit 8_ Cold War and Decolonization, 1900-Present.pdf
+_Review Unit 9_ Globalization, 1900-Present.pdf
+_Sepoy Rebellion Document Analysis (1).pdf
+_Sepoy Rebellion Document Analysis.pdf
+_Sourcing - Intended Audience_ Aishni Raghuvanshi.pdf
+_The Middle Passage Document Analysis- Aishni R. (1).docx
+_The Middle Passage Document Analysis- Aishni R..docx
+_Unit 1 Study Guide (1).docx
+_Unit 1 Study Guide (2).docx
+_Unit 1 Study Guide.docx
+_Unit 2 Study Guide redo.docx
+_Unit 3 Study Guide.docx
+_What is Genocide__ Aishni Raghuvanshi .pdf
+_blank soc sem.docx (Aishni).docx
+_blank soc sem.docx (Aishni).docx.pdf
+_gender pref socratic seminar.docx - Aishni  (1).docx
+_gender pref socratic seminar.docx - Aishni .docx
+animal farm socratic seminar #2.docx
+animal farm socratic seminar.docx
+annewithane.jpeg
+appc_2.4_solutions.pdf
+appc_2.4extra_ca1.pdf
+appc_2.5a_solutions.pdf
+appc_2.5b_solutions.pdf
+appc_3.1_packet.pdf
+athletic clearence.pdf
+avast_security_online.dmg
+b99.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjg3MDUxNi53ZWJw
+blank soc sem.docx- F451 (Socratic Seminar #2).docx
+blank soc sem.docx- F451 (Socratic Seminar #2).docx.pdf
+brooklyn99.jpg
+build your atom phet (part 1).pdf
+build your atom phet (part 2).pdf
+c291ce33-bef6-4df4-9c2c-eea42592b840.jpeg
+charges and fields phet (1).pdf
+circuit engineering 3-3.pdf
+circuit lab (warm up) 2025.pdf
+circuit lab (warm up).mp4
+clothes123.jpg
+concept_development_9-1_9-2_and_9-3 (1).ppt
+concept_development_9-1_9-2_and_9-3.ppt
+connections
+design project crash barrier CP-2.pdf
+drakezilla.jpeg
+electric circuit phet (warm up).pdf
+electric force phet.pdf
+electromagnet phet.pdf
+electrostatics 1-21-1 (1).pdf
+electrostatics 1-21-1.pdf
+electrostatics 1-27.pdf
+eyemakeup123.jpg
+final draft.docx
+fwb12.jpeg
+girl123.jpg
+googlechrome.dmg
+graph introduction 8-19 (1).pdf
+graph introduction 8-19.pdf
+hackathon.pdf
+himym.jpg
+instagram-aishni.r-2024-06-21-YJcZy2LY.zip
+inverse square law worksheet.pdf
+jaguar.png
+jewlery134.jpg
+jtv.jpg
+light introduction (student).pdf
+llm_disagrees_at_edits.xlsx
+llm_score.py
+llm_score_results.csv
+messineymarsuarez123.jpg
+nails123.jpg
+net force worksheet-1.pdf
+newton 3rd law worksheet.pdf
+neymar.jpg
+openai-1.34.0
+openai-1.34.0 2
+openai-1.34.0.tar.gz
+output (1).png
+output (2).png
+output (3).png
+output.png
+overlaygraph.png
+paroot.jpeg
+phet collision.pdf
+phet forces and motion.pdf
+phet friction.pdf
+phet pendulum energy.pdf
+phet wave on a string.pdf
+playingsoccer.jpg
+python-3.12.4-macos11 (1).pkg
+python-3.12.4-macos11.pkg
+reflection and refraction PhET.pdf
+review questions spring 2025.pdf
+salwarkameez123.png
+scarletmacow.jpeg
+series parallel circuit lab.pdf
+skateboard design phet.pdf
+smoothlegs123.jpg
+socah.jpg
+soccah.jpg
+soty123.jpeg
+statistics.png
+swervycaresreplit
+system force and acceleration worksheet.pdf
+the Tokugawa Shogunate gain, consolidate, and maintain power in Japan_ (1).docx
+the Tokugawa Shogunate gain, consolidate, and maintain power in Japan_.docx
+unit 2 assignment .pdf
+vibration and wave worksheet.pdf
+volunteer.html
+warm-up-solving-logarithmic-inequalities-key-1737228235.pdf
+wave superposition (student) (1).pdf
+wave superposition worksheet.pdf
+waves (student)-1.pdf
+whitechicks.jpg
+word roots worksheet 2.docx
+word roots worksheet 3 - Aishni .docx
+word roots worksheet 4.docx
+word roots worksheet 4.docx.pdf
+word roots worksheet 5.docx_ Aishni Raghuvanshi .docx
+word roots worksheet 5.odt
+worksheet_-_4_-_fbd_answers (1).docx
+worksheet_-_4_-_fbd_answers.docx
+yajurspiano.pdf
+zappy phet.pdf
+aishniraghuvanshi@Aishnis-Laptop-4 Downloads % cd swervycaresreplit
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % ls
+COMPLETE_DEPLOYMENT_GUIDE.md	netlify
+DEPLOYMENT.md			netlify.toml
+DEPLOYMENT_GUIDE.md		package-lock.json
+NETLIFY_DEPLOYMENT.md		package.json
+README.md			postcss.config.js
+STATIC_DEPLOYMENT.md		replit.md
+STATIC_DEPLOYMENT_FIX.md	server
+attached_assets			shared
+build-for-static-deployment.js	tailwind.config.ts
+client				tsconfig.json
+components.json			vite.config.static.ts
+drizzle.config.ts		vite.config.ts
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % rm -rf ~/.git
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % git init
+Reinitialized existing Git repository in /Users/aishniraghuvanshi/Downloads/swervycaresreplit/.git/
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % git add .
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % git commit -m "Initial commit: Swervy Cares website with AI chat"
+On branch main
+nothing to commit, working tree clean
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % ls -la
+total 816
+drwxr-xr-x@  30 aishniraghuvanshi  staff     960 Jul  7 20:08 .
+drwx------+ 404 aishniraghuvanshi  staff   12928 Jul  7 20:08 ..
+drwxr-xr-x@  13 aishniraghuvanshi  staff     416 Jul  7 20:33 .git
+drwxr-xr-x@   3 aishniraghuvanshi  staff      96 Jul  7 02:11 .github
+-rw-r--r--@   1 aishniraghuvanshi  staff      67 Jun 30 03:15 .gitignore
+-rw-r--r--@   1 aishniraghuvanshi  staff     662 Jul  6 22:00 .replit
+-rw-r--r--@   1 aishniraghuvanshi  staff    9100 Jul  7 20:06 COMPLETE_DEPLOYMENT_GUIDE.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    2594 Jul  7 02:12 DEPLOYMENT.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3738 Jul  6 22:03 DEPLOYMENT_GUIDE.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    2705 Jul  7 20:03 NETLIFY_DEPLOYMENT.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3487 Jul  7 02:11 README.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3821 Jul  6 22:03 STATIC_DEPLOYMENT.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3046 Jul  6 22:02 STATIC_DEPLOYMENT_FIX.md
+drwxr-xr-x@  10 aishniraghuvanshi  staff     320 Jul  7 01:58 attached_assets
+-rw-r--r--@   1 aishniraghuvanshi  staff    2322 Jul  6 22:02 build-for-static-deployment.js
+drwxr-xr-x@   7 aishniraghuvanshi  staff     224 Jul  6 22:43 client
+-rw-r--r--@   1 aishniraghuvanshi  staff     459 Jun 30 03:15 components.json
+-rw-r--r--@   1 aishniraghuvanshi  staff     325 Jun 30 03:15 drizzle.config.ts
+drwxr-xr-x@   3 aishniraghuvanshi  staff      96 Jul  7 20:03 netlify
+-rw-r--r--@   1 aishniraghuvanshi  staff     320 Jul  7 20:03 netlify.toml
+-rw-r--r--@   1 aishniraghuvanshi  staff  320948 Jul  7 02:04 package-lock.json
+-rw-r--r--@   1 aishniraghuvanshi  staff    3559 Jun 30 03:16 package.json
+-rw-r--r--@   1 aishniraghuvanshi  staff      80 Jun 30 03:15 postcss.config.js
+-rw-r--r--@   1 aishniraghuvanshi  staff    5048 Jul  7 02:08 replit.md
+drwxr-xr-x@   7 aishniraghuvanshi  staff     224 Jun 30 03:17 server
+drwxr-xr-x@   3 aishniraghuvanshi  staff      96 Jun 30 03:16 shared
+-rw-r--r--@   1 aishniraghuvanshi  staff    3733 Jun 30 03:36 tailwind.config.ts
+-rw-r--r--@   1 aishniraghuvanshi  staff     657 Jun 30 03:15 tsconfig.json
+-rw-r--r--@   1 aishniraghuvanshi  staff     490 Jul  6 21:53 vite.config.static.ts
+-rw-r--r--@   1 aishniraghuvanshi  staff     971 Jun 30 03:15 vite.config.ts
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % git status
+On branch main
+nothing to commit, working tree clean
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % git add . --force
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % git add *
+
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % git status
+On branch main
+nothing to commit, working tree clean
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % 
