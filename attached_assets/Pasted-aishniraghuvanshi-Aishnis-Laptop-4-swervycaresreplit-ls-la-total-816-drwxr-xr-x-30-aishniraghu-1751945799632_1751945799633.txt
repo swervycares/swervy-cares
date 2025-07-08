@@ -1,0 +1,33 @@
+aishniraghuvanshi@Aishnis-Laptop-4 swervycaresreplit % ls -la
+
+total 816
+drwxr-xr-x@  30 aishniraghuvanshi  staff     960 Jul  7 20:08 .
+drwx------+ 404 aishniraghuvanshi  staff   12928 Jul  7 20:08 ..
+drwxr-xr-x@  13 aishniraghuvanshi  staff     416 Jul  7 20:34 .git
+drwxr-xr-x@   3 aishniraghuvanshi  staff      96 Jul  7 02:11 .github
+-rw-r--r--@   1 aishniraghuvanshi  staff      67 Jun 30 03:15 .gitignore
+-rw-r--r--@   1 aishniraghuvanshi  staff     662 Jul  6 22:00 .replit
+-rw-r--r--@   1 aishniraghuvanshi  staff    9100 Jul  7 20:06 COMPLETE_DEPLOYMENT_GUIDE.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    2594 Jul  7 02:12 DEPLOYMENT.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3738 Jul  6 22:03 DEPLOYMENT_GUIDE.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    2705 Jul  7 20:03 NETLIFY_DEPLOYMENT.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3487 Jul  7 02:11 README.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3821 Jul  6 22:03 STATIC_DEPLOYMENT.md
+-rw-r--r--@   1 aishniraghuvanshi  staff    3046 Jul  6 22:02 STATIC_DEPLOYMENT_FIX.md
+drwxr-xr-x@  10 aishniraghuvanshi  staff     320 Jul  7 01:58 attached_assets
+-rw-r--r--@   1 aishniraghuvanshi  staff    2322 Jul  6 22:02 build-for-static-deployment.js
+drwxr-xr-x@   7 aishniraghuvanshi  staff     224 Jul  6 22:43 client
+-rw-r--r--@   1 aishniraghuvanshi  staff     459 Jun 30 03:15 components.json
+-rw-r--r--@   1 aishniraghuvanshi  staff     325 Jun 30 03:15 drizzle.config.ts
+drwxr-xr-x@   3 aishniraghuvanshi  staff      96 Jul  7 20:03 netlify
+-rw-r--r--@   1 aishniraghuvanshi  staff     320 Jul  7 20:03 netlify.toml
+-rw-r--r--@   1 aishniraghuvanshi  staff  320948 Jul  7 02:04 package-lock.json
+-rw-r--r--@   1 aishniraghuvanshi  staff    3559 Jun 30 03:16 package.json
+-rw-r--r--@   1 aishniraghuvanshi  staff      80 Jun 30 03:15 postcss.config.js
+-rw-r--r--@   1 aishniraghuvanshi  staff    5048 Jul  7 02:08 replit.md
+drwxr-xr-x@   7 aishniraghuvanshi  staff     224 Jun 30 03:17 server
+drwxr-xr-x@   3 aishniraghuvanshi  staff      96 Jun 30 03:16 shared
+-rw-r--r--@   1 aishniraghuvanshi  staff    3733 Jun 30 03:36 tailwind.config.ts
+-rw-r--r--@   1 aishniraghuvanshi  staff     657 Jun 30 03:15 tsconfig.json
+-rw-r--r--@   1 aishniraghuvanshi  staff     490 Jul  6 21:53 vite.config.static.ts
+-rw-r--r--@   1 aishniraghuvanshi  staff     971 Jun 30 03:15 vite.config.ts
