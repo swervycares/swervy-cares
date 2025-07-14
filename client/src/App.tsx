@@ -14,6 +14,7 @@ import Share from "@/pages/Share";
 import Blog from "@/pages/Blog";
 import Communities from "@/pages/Communities";
 import Stories from "@/pages/Stories";
+import Events from "@/pages/Events";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/communities" component={Communities} />
       <Route path="/stories" component={Stories} />
+      <Route path="/events" component={Events} />
       <Route component={NotFound} />
     </Switch>
   );

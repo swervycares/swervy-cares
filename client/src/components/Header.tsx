@@ -66,6 +66,14 @@ export default function Header() {
                 Blog
               </Link>
               <Link 
+                href="/events"
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-sm ${
+                  location === '/events' ? 'text-white bg-gradient-to-r from-swervy-coral to-swervy-sunset shadow-lg' : 'text-swervy-coral hover:text-white hover:bg-gradient-to-r hover:from-swervy-coral-light hover:to-swervy-coral hover:shadow-md'
+                }`}
+              >
+                Events
+              </Link>
+              <Link 
                 href="/volunteer"
                 className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-sm ${
                   location === '/volunteer' ? 'text-white bg-gradient-to-r from-swervy-coral to-swervy-sunset shadow-lg' : 'text-swervy-coral hover:text-white hover:bg-gradient-to-r hover:from-swervy-coral-light hover:to-swervy-coral hover:shadow-md'
@@ -145,6 +153,15 @@ export default function Header() {
                 }`}
               >
                 Blog
+              </Link>
+              <Link 
+                href="/events"
+                onClick={handleLinkClick}
+                className={`block w-full text-left px-3 py-2 rounded-lg text-sm font-semibold ${
+                  location === '/events' ? 'text-swervy-pink bg-swervy-pale-pink' : 'text-gray-700 hover:text-swervy-pink'
+                }`}
+              >
+                Events
               </Link>
               <Link 
                 href="/volunteer"
