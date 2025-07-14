@@ -7,61 +7,20 @@ export default function Events() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Back-to-School Kit Drive",
-      date: "August 15, 2025",
-      time: "10:00 AM - 4:00 PM",
-      location: "Community Center, Downtown",
-      description: "Help us prepare special back-to-school self-care kits for girls starting their new school year with confidence.",
+      title: "Swervy Cares Fundraiser",
+      date: "Sunday, July 20, 2025",
+      time: "3:30 PM",
+      location: "Evergreen Village Square",
+      description: "Join us for a community fundraiser to support our mission of empowering young girls through self-care kits.",
       type: "fundraiser",
-      volunteers: 25,
-      goal: "100 kits",
-      status: "upcoming"
-    },
-    {
-      id: 2,
-      title: "Confidence Workshop Series",
-      date: "July 20, 2025",
-      time: "2:00 PM - 5:00 PM",
-      location: "Online via Zoom",
-      description: "Interactive workshop teaching young girls about self-care, confidence building, and personal empowerment.",
-      type: "workshop",
-      volunteers: 8,
-      goal: "50 participants",
-      status: "upcoming"
-    },
-    {
-      id: 3,
-      title: "Community Volunteer Day",
-      date: "September 5, 2025",
-      time: "9:00 AM - 6:00 PM",
-      location: "Swervy Cares Headquarters",
-      description: "Join us for a day of kit assembly, packaging, and preparing care packages for distribution.",
-      type: "volunteer",
-      volunteers: 40,
-      goal: "200 kits assembled",
+      volunteers: "TBD",
+      goal: "Support our mission",
       status: "upcoming"
     }
   ];
 
   const pastEvents = [
-    {
-      id: 4,
-      title: "Summer Self-Care Celebration",
-      date: "June 10, 2025",
-      description: "Successfully distributed 150 summer-themed self-care kits to young girls in our community.",
-      type: "fundraiser",
-      result: "150 kits distributed",
-      status: "completed"
-    },
-    {
-      id: 5,
-      title: "Mother's Day Special Drive",
-      date: "May 8, 2025",
-      description: "Beautiful event where mothers and daughters received matching self-care items together.",
-      type: "fundraiser",
-      result: "75 families reached",
-      status: "completed"
-    }
+    // Past events will be added here as they are completed
   ];
 
   const getEventIcon = (type: string) => {
@@ -173,42 +132,44 @@ export default function Events() {
         </div>
 
         {/* Past Events */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Recent Success Stories</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {pastEvents.map((event) => (
-              <Card key={event.id} className="bg-white shadow-lg border-0 rounded-2xl overflow-hidden">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-3">
-                    {getEventIcon(event.type)}
-                    <Badge className="bg-green-100 text-green-800 border-green-200 font-semibold">
-                      Completed
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-bold text-gray-800 mb-2">
-                    {event.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-sm">
-                    {event.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="space-y-3">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Calendar className="w-4 h-4 mr-2 text-pink-500" />
-                      {event.date}
+        {pastEvents.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Recent Success Stories</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {pastEvents.map((event) => (
+                <Card key={event.id} className="bg-white shadow-lg border-0 rounded-2xl overflow-hidden">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-3">
+                      {getEventIcon(event.type)}
+                      <Badge className="bg-green-100 text-green-800 border-green-200 font-semibold">
+                        Completed
+                      </Badge>
                     </div>
-                    <div className="bg-gradient-to-r from-green-100 to-turquoise-100 rounded-lg p-3 mt-4">
-                      <p className="text-sm font-semibold text-gray-700">
-                        ✓ {event.result}
-                      </p>
+                    <CardTitle className="text-xl font-bold text-gray-800 mb-2">
+                      {event.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-600 text-sm">
+                      {event.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Calendar className="w-4 h-4 mr-2 text-pink-500" />
+                        {event.date}
+                      </div>
+                      <div className="bg-gradient-to-r from-green-100 to-turquoise-100 rounded-lg p-3 mt-4">
+                        <p className="text-sm font-semibold text-gray-700">
+                          ✓ {event.result}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Get Involved Section */}
         <div className="bg-gradient-to-r from-pink-600 via-purple-600 to-turquoise-600 rounded-3xl p-12 text-white text-center">
