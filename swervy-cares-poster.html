@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swervy Cares Poster</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .poster {
+            width: 500px;
+            height: 700px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, #db2777, #9333ea);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        @media print {
+            body { padding: 0; background: white; }
+            .print-button { display: none; }
+            .poster { box-shadow: none; border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Print Poster</button>
+    
+    <div class="poster">
+        <svg viewBox="0 0 500 700" width="500" height="700">
+            <defs>
+                <linearGradient id="posterBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#fdf2f8;stop-opacity:1" />
+                    <stop offset="25%" style="stop-color:#f3e8ff;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#ecfdf5;stop-opacity:1" />
+                    <stop offset="75%" style="stop-color:#f0f9ff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#fef3c7;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+                    <stop offset="33%" style="stop-color:#a855f7;stop-opacity:1" />
+                    <stop offset="66%" style="stop-color:#14b8a6;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                </linearGradient>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <!-- Background -->
+            <rect width="500" height="700" fill="url(#posterBg)" />
+
+            <!-- Decorative elements -->
+            <g opacity="0.4">
+                <!-- Flowers -->
+                <g fill="#ec4899">
+                    <circle cx="80" cy="120" r="15" opacity="0.3" />
+                    <circle cx="75" cy="115" r="8" opacity="0.5" />
+                    <circle cx="85" cy="115" r="8" opacity="0.5" />
+                    <circle cx="75" cy="125" r="8" opacity="0.5" />
+                    <circle cx="85" cy="125" r="8" opacity="0.5" />
+                    <circle cx="80" cy="120" r="5" fill="#fbbf24" />
+                </g>
+                <g fill="#a855f7">
+                    <circle cx="420" cy="160" r="12" opacity="0.3" />
+                    <circle cx="416" cy="156" r="6" opacity="0.5" />
+                    <circle cx="424" cy="156" r="6" opacity="0.5" />
+                    <circle cx="416" cy="164" r="6" opacity="0.5" />
+                    <circle cx="424" cy="164" r="6" opacity="0.5" />
+                    <circle cx="420" cy="160" r="4" fill="#14b8a6" />
+                </g>
+                <g fill="#14b8a6">
+                    <circle cx="100" cy="600" r="18" opacity="0.3" />
+                    <circle cx="94" cy="594" r="9" opacity="0.5" />
+                    <circle cx="106" cy="594" r="9" opacity="0.5" />
+                    <circle cx="94" cy="606" r="9" opacity="0.5" />
+                    <circle cx="106" cy="606" r="9" opacity="0.5" />
+                    <circle cx="100" cy="600" r="6" fill="#f59e0b" />
+                </g>
+                <g fill="#f59e0b">
+                    <circle cx="400" cy="580" r="14" opacity="0.3" />
+                    <circle cx="396" cy="576" r="7" opacity="0.5" />
+                    <circle cx="404" cy="576" r="7" opacity="0.5" />
+                    <circle cx="396" cy="584" r="7" opacity="0.5" />
+                    <circle cx="404" cy="584" r="7" opacity="0.5" />
+                    <circle cx="400" cy="580" r="4" fill="#ec4899" />
+                </g>
+                
+                <!-- Hearts -->
+                <g fill="#ec4899" opacity="0.6">
+                    <path d="M150 200 C145 195, 135 195, 135 205 C135 215, 150 230, 150 230 C150 230, 165 215, 165 205 C165 195, 155 195, 150 200 Z" />
+                    <path d="M350 250 C345 245, 335 245, 335 255 C335 265, 350 280, 350 280 C350 280, 365 265, 365 255 C365 245, 355 245, 350 250 Z" />
+                </g>
+                
+                <!-- Stars -->
+                <g fill="#a855f7" opacity="0.5">
+                    <polygon points="120,400 125,410 135,410 127,417 130,427 120,420 110,427 113,417 105,410 115,410" />
+                    <polygon points="380,350 385,360 395,360 387,367 390,377 380,370 370,377 373,367 365,360 375,360" />
+                    <polygon points="180,500 185,510 195,510 187,517 190,527 180,520 170,527 173,517 165,510 175,510" />
+                </g>
+            </g>
+
+            <!-- Main Title -->
+            <rect x="50" y="250" width="400" height="120" fill="white" stroke="url(#titleGrad)" stroke-width="4" rx="20" opacity="0.95" />
+            <text x="250" y="310" text-anchor="middle" fill="url(#titleGrad)" font-size="42" font-weight="bold" filter="url(#glow)">
+                Swervy Cares
+            </text>
+            <rect x="80" y="325" width="340" height="2" fill="url(#titleGrad)" opacity="0.7" />
+
+            <!-- Mission Statement -->
+            <rect x="70" y="420" width="360" height="180" fill="white" stroke="#ec4899" stroke-width="3" rx="25" opacity="0.95" />
+            <text x="250" y="460" text-anchor="middle" fill="#db2777" font-size="18" font-weight="bold">
+                Empowering Young Girls
+            </text>
+            <text x="250" y="485" text-anchor="middle" fill="#1f2937" font-size="16">
+                Through Self-Care
+            </text>
+            <text x="250" y="510" text-anchor="middle" fill="#1f2937" font-size="16">
+                &amp; Confidence Building
+            </text>
+            
+            <!-- Decorative line -->
+            <rect x="150" y="525" width="200" height="1" fill="#a855f7" opacity="0.6" />
+            
+            <text x="250" y="550" text-anchor="middle" fill="#059669" font-size="14" font-style="italic">
+                "Every girl deserves to feel
+            </text>
+            <text x="250" y="570" text-anchor="middle" fill="#059669" font-size="14" font-style="italic">
+                beautiful and confident"
+            </text>
+
+            <!-- Bottom decorative border -->
+            <rect x="0" y="650" width="500" height="50" fill="url(#titleGrad)" opacity="0.8" />
+            <text x="250" y="675" text-anchor="middle" fill="white" font-size="14" font-weight="bold">
+                aishniragh@icloud.com
+            </text>
+        </svg>
+    </div>
+</body>
+</html>
