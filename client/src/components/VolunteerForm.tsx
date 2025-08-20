@@ -217,10 +217,7 @@ export default function VolunteerForm() {
                       <div className="grid md:grid-cols-2 gap-4">
                         {[
                           { id: "kit_assembly", label: "Kit Assembly", desc: "Help package and personalize self-care kits" },
-                          { id: "admin_support", label: "Administrative Support", desc: "Data entry, communications, scheduling" },
-                          { id: "community_outreach", label: "Community Outreach", desc: "Connect with schools and organizations" },
                           { id: "social_media", label: "Social Media & Marketing", desc: "Content creation and digital marketing" },
-                          { id: "workshop_facilitation", label: "Workshop Facilitation", desc: "Lead confidence-building workshops" },
                           { id: "creative_design", label: "Creative & Design", desc: "Graphics, cards, educational materials" }
                         ].map((opportunity) => (
                           <FormField
