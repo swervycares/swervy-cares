@@ -37,9 +37,9 @@ export default function Events() {
       date: "Friday, July 25, 2025",
       time: "2:00 PM",
       location: "Fowler Creek Park",
-      description: "Special delivery of free self-care kits to local care homes and community centers serving young girls in need.",
+      description: "We packed up our car and drove around to local care homes to personally deliver self-care kits to girls who needed them most.",
       type: "volunteer",
-      result: "15 kits delivered to care homes with 3 volunteers",
+      result: "10 kits delivered to care homes with 3 volunteers",
       status: "completed"
     },
     {
@@ -48,9 +48,9 @@ export default function Events() {
       date: "Saturday, July 26, 2025",
       time: "11:00 AM",
       location: "Fowler Creek Park",
-      description: "Special day dedicated to distributing personalized self-care kits to girls in need.",
+      description: "Set up a little table at the park and had families come by to pick up kits. It was so heartwarming to see the girls' faces light up!",
       type: "volunteer",
-      result: "30 kits distributed with 3 volunteers",
+      result: "10 kits distributed with 3 volunteers",
       status: "completed"
     }
   ];
