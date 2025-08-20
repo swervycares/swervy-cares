@@ -1,5 +1,8 @@
-// OpenAI temporarily disabled while API key issues are resolved
-// Will be re-enabled once a valid API key is provided
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 export interface ChatMessage {
   role: 'user' | 'assistant';
@@ -16,6 +19,47 @@ export interface KitRecommendations {
 }
 
 export async function generateChatResponse(messages: ChatMessage[]): Promise<string> {
+  try {
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        {
+          role: "system",
+          content: `You are a helpful AI assistant for Swervy Cares, a nonprofit that creates personalized self-care kits for young girls aged 6-18. Your role is to have friendly, age-appropriate conversations to understand their preferences for makeup colors, scents, and styles.
+
+Guidelines:
+- Be warm, encouraging, and age-appropriate
+- Ask about makeup style preferences (natural, bold, trendy)
+- Ask about color preferences (warm/cool tones, specific colors)
+- Ask about scent preferences (sweet, fruity, unique)
+- Ask about lashes (natural, dramatic, none)
+- Ask about lip products (glossy vs matte)
+- Adapt language based on age (simpler for younger girls)
+- Focus on building confidence and self-expression
+- Keep responses encouraging and positive
+- Once you have enough information, suggest they're ready for recommendations
+
+Remember: You're helping them discover their personal style to create the perfect self-care kit that will make them feel confident and beautiful.`
+        },
+        ...messages.map(msg => ({
+          role: msg.role as 'user' | 'assistant',
+          content: msg.content
+        }))
+      ],
+      max_tokens: 300,
+      temperature: 0.7,
+    });
+
+    return completion.choices[0]?.message?.content || "I'm here to help you find your perfect self-care kit! Tell me more about your style preferences.";
+  } catch (error) {
+    console.error('OpenAI API error:', error);
+    // Fallback response if API fails
+    return generateFallbackChatResponse(messages);
+  }
+}
+
+// Fallback function with the original logic
+function generateFallbackChatResponse(messages: ChatMessage[]): string {
   const lastMessage = messages[messages.length - 1]?.content.toLowerCase() || '';
   const conversationLength = messages.length;
   const allMessages = messages.map(msg => msg.content.toLowerCase()).join(' ');
@@ -163,6 +207,65 @@ export async function generateChatResponse(messages: ChatMessage[]): Promise<str
 }
 
 export async function generateKitRecommendations(chatHistory: ChatMessage[]): Promise<KitRecommendations> {
+  try {
+    const conversationSummary = chatHistory.map(msg => `${msg.role}: ${msg.content}`).join('\n');
+    
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        {
+          role: "system",
+          content: `Based on the conversation with a young girl about her self-care preferences, generate personalized kit recommendations. 
+
+Available options:
+Lip Shades: Rose Pink, Coral Crush, Peachy Keen, Berry Bliss, Natural Nude, Honey Nude, Cherry Red, Purple Dream, Hot Pink, Cotton Candy, Sunset Orange, Galaxy Purple, Rose Gold, Golden Honey, Plum Perfect, Wine Berry, Midnight Blue, Fuchsia, Violet, and more
+
+Scents: Vanilla, Cotton Candy, Cake Batter, Caramel Swirl, Root Beer, Strawberry Fields, Raspberry Fizz, Peach Bellini, Watermelon Splash, Banana Split, Blueberry Muffin, Coconut Paradise, Cherry Bomb, Grape Soda, Spring Flowers, Citrus Burst, Mint, and more
+
+Lashes: Natural, Glam, No Lashes
+Lip Oil: Yes, No
+
+Respond in this exact JSON format:
+{
+  "lipShade": "[shade name]",
+  "scent": "[scent name]",
+  "lashes": "[lash preference]",
+  "oil": "[Yes or No]",
+  "additionalItems": ["item1", "item2", "item3"],
+  "reasoning": "[1-2 sentences explaining why these choices fit their personality and preferences]"
+}
+
+Additional items should be confidence-building items like journals, affirmation cards, self-care guides, etc.`
+        },
+        {
+          role: "user",
+          content: `Please analyze this conversation and create personalized recommendations:\n\n${conversationSummary}`
+        }
+      ],
+      max_tokens: 500,
+      temperature: 0.3,
+    });
+
+    const responseContent = completion.choices[0]?.message?.content;
+    if (responseContent) {
+      try {
+        const recommendations = JSON.parse(responseContent);
+        return recommendations;
+      } catch (parseError) {
+        console.error('Failed to parse AI recommendations:', parseError);
+        return generateFallbackKitRecommendations(chatHistory);
+      }
+    }
+    
+    return generateFallbackKitRecommendations(chatHistory);
+  } catch (error) {
+    console.error('OpenAI API error for recommendations:', error);
+    return generateFallbackKitRecommendations(chatHistory);
+  }
+}
+
+// Fallback function with the original logic
+function generateFallbackKitRecommendations(chatHistory: ChatMessage[]): KitRecommendations {
   const conversation = chatHistory.map(msg => msg.content.toLowerCase()).join(' ');
   
   // Detect age for age-appropriate recommendations
