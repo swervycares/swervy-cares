@@ -3,32 +3,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Maya",
-    age: 14,
-    text: "The AI chat was amazing! It helped me find the perfect coral lip shade. I never thought I'd love makeup this much. My confidence has grown so much since getting my kit.",
+    name: "Coming Soon",
+    age: null,
+    text: "We're just getting started! Real testimonials from the amazing girls we serve will appear here soon. Be the first to share your Swervy Cares story!",
     color: "from-pink-400 to-purple-500",
-    initial: "M"
+    initial: "💝"
   },
   {
-    name: "Sophia", 
-    age: 16,
-    text: "I LOVE my cotton candy scented lip balm! The whole kit made me feel so special. Thank you for helping me discover my style and feel beautiful inside and out.",
+    name: "Your Story Here", 
+    age: null,
+    text: "Have you received a Swervy Cares kit? We'd love to hear how it made you feel! Your story could inspire other girls on their confidence journey.",
     color: "from-purple-400 to-blue-500",
-    initial: "S"
+    initial: "✨"
   },
   {
-    name: "Aria",
-    age: 12,
-    text: "The AI was so cool! It understood exactly what I wanted. Now I feel confident at school and love my self-care routine. Best surprise ever!",
+    name: "Share With Us",
+    age: null,
+    text: "Every girl's journey is unique and beautiful. If Swervy Cares has been part of yours, we'd be honored to share your story (with your permission, of course!).",
     color: "from-blue-400 to-teal-500",
-    initial: "A"
-  },
-  {
-    name: "Emma",
-    age: 15,
-    text: "Getting my kit felt like Christmas morning! Everything was perfect for my style. The lipstick color matches my personality perfectly. I feel so much more confident now.",
-    color: "from-teal-400 to-green-500",
-    initial: "E"
+    initial: "💖"
   }
 ];
 
@@ -56,7 +49,7 @@ export default function TestimonialsCarousel() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">What Girls Are Saying</h2>
-          <p className="text-xl text-gray-600">Real stories from girls who've received their Swervy Cares kits</p>
+          <p className="text-xl text-gray-600">Soon to feature real stories from girls who've received their Swervy Cares kits</p>
         </div>
 
         <div className="relative">
@@ -81,7 +74,7 @@ export default function TestimonialsCarousel() {
                         </svg>
                       ))}
                     </div>
-                    <h4 className="font-bold text-gray-800 text-lg">{testimonial.name}, {testimonial.age}</h4>
+                    <h4 className="font-bold text-gray-800 text-lg">{testimonial.name}{testimonial.age ? `, ${testimonial.age}` : ''}</h4>
                   </div>
                 </div>
               ))}

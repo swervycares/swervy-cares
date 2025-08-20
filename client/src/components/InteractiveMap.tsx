@@ -1,27 +1,11 @@
 import { useState } from "react";
 
 const communities = [
-  { name: "San Jose, CA", kits: 3, lat: 37.3382, lng: -121.8863, region: "Bay Area" },
-  { name: "Oakland, CA", kits: 2, lat: 37.8044, lng: -122.2711, region: "Bay Area" },
-  { name: "San Francisco, CA", kits: 2, lat: 37.7749, lng: -122.4194, region: "Bay Area" },
-  { name: "Los Angeles, CA", kits: 0, lat: 34.0522, lng: -118.2437, region: "Southern California" },
-  { name: "San Diego, CA", kits: 0, lat: 32.7157, lng: -117.1611, region: "Southern California" },
-  { name: "Sacramento, CA", kits: 0, lat: 38.5816, lng: -121.4944, region: "Central Valley" },
-  { name: "Fresno, CA", kits: 0, lat: 36.7378, lng: -119.7871, region: "Central Valley" },
-  { name: "Seattle, WA", kits: 0, lat: 47.6062, lng: -122.3321, region: "Pacific Northwest" },
-  { name: "Portland, OR", kits: 0, lat: 45.5152, lng: -122.6784, region: "Pacific Northwest" },
-  { name: "Phoenix, AZ", kits: 0, lat: 33.4484, lng: -112.0740, region: "Southwest" },
-  { name: "Las Vegas, NV", kits: 0, lat: 36.1699, lng: -115.1398, region: "Southwest" },
-  { name: "Denver, CO", kits: 0, lat: 39.7392, lng: -104.9903, region: "Mountain West" }
+  { name: "San Francisco, CA", kits: 0, lat: 37.7749, lng: -122.4194, region: "Bay Area" }
 ];
 
 const regions = [
-  { name: "Bay Area", color: "from-pink-400 to-purple-500", total: 7 },
-  { name: "Southern California", color: "from-purple-400 to-blue-500", total: 0 },
-  { name: "Central Valley", color: "from-blue-400 to-teal-500", total: 0 },
-  { name: "Pacific Northwest", color: "from-teal-400 to-green-500", total: 0 },
-  { name: "Southwest", color: "from-orange-400 to-pink-500", total: 0 },
-  { name: "Mountain West", color: "from-purple-500 to-pink-500", total: 0 }
+  { name: "Bay Area", color: "from-pink-400 to-purple-500", total: 0 }
 ];
 
 export default function InteractiveMap() {
@@ -42,7 +26,7 @@ export default function InteractiveMap() {
             Communities We're Building
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See where we've started delivering self-care kits and our expansion plans to help young girls build confidence across the West Coast and beyond.
+See where we're starting our mission to deliver self-care kits and our expansion plans to help young girls build confidence across the West Coast and beyond.
           </p>
         </div>
 
@@ -85,7 +69,7 @@ export default function InteractiveMap() {
                     {selectedCommunity?.name === community.name && (
                       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-white rounded-lg p-2 shadow-lg whitespace-nowrap">
                         <p className="font-bold text-sm">{community.name}</p>
-                        <p className="text-xs text-gray-600">{community.kits} kits delivered</p>
+                        <p className="text-xs text-gray-600">Starting point - {community.kits} kits delivered so far</p>
                       </div>
                     )}
                   </div>

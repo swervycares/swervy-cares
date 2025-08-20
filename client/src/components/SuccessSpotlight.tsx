@@ -3,38 +3,38 @@ import { Calendar, Heart, Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const monthlySpotlights = [
   {
-    month: "May 2025",
+    month: "Coming Soon",
     featured: {
-      name: "Maya Chen",
-      age: 15,
-      location: "San Francisco, CA",
-      story: "When I first got my Swervy Cares kit, I was struggling with confidence at my new high school. The AI chat helped me find the perfect coral lip shade that matched my personality. But what really changed everything was the confidence journal included in my kit. Writing down three things I was grateful for each day helped me see my own worth. Now I'm captain of the debate team and I credit that daily self-care routine with helping me find my voice.",
-      before: "Shy, struggled to speak up in class, felt invisible at new school",
-      after: "Confident public speaker, positive self-image",
-      favoriteProduct: "Coral Crush lip shade + Daily Confidence Journal",
-      quote: "Swervy Cares didn't just give me makeup. It gave me a daily reminder that I'm worth taking care of.",
-      image: "🌸",
-      achievements: ["Debate Team Captain", "Honor Roll Student", "Peer Mentor"],
-      timeframe: "1 month with Swervy Cares"
+      name: "Your Success Story",
+      age: null,
+      location: "Everywhere",
+      story: "We're just beginning our journey, and we can't wait to celebrate the real transformations that will happen in our community. This space will soon feature genuine success stories from girls whose lives have been touched by Swervy Cares. Every girl deserves to see her worth, and we're here to support that journey.",
+      before: "Starting our mission",
+      after: "Building authentic community",
+      favoriteProduct: "Real experiences coming soon",
+      quote: "Every girl has the potential for an amazing transformation story.",
+      image: "🌟",
+      achievements: ["Authentic Community", "Real Impact", "Genuine Care"],
+      timeframe: "The journey begins now"
     },
     honorableMentions: [
       {
-        name: "Sophia R.",
-        age: 13,
-        achievement: "Started a self-care club at her middle school",
-        impact: "25 students now participate in weekly confidence-building activities"
+        name: "Future Heroes",
+        age: null,
+        achievement: "Real achievements will be celebrated here",
+        impact: "Authentic impact stories coming soon"
       },
       {
-        name: "Emma K.",
-        age: 16,
-        achievement: "Launched her own YouTube channel about positive self-talk",
-        impact: "Over 5,000 subscribers inspired by her confidence journey"
+        name: "Your Achievement",
+        age: null,
+        achievement: "Share your confidence journey with us",
+        impact: "Your story could inspire others"
       },
       {
-        name: "Aria M.",
-        age: 12,
-        achievement: "Organized a kit donation drive for younger girls",
-        impact: "Raised funds for 15 additional kits for her community"
+        name: "Community Impact",
+        age: null,
+        achievement: "Together we'll build something beautiful",
+        impact: "Real change happens one girl at a time"
       }
     ]
   }
@@ -203,8 +203,8 @@ export default function SuccessSpotlight() {
               <div className="bg-white rounded-2xl p-6 shadow-xl text-center">
                 <div className="text-3xl mb-2">⭐</div>
                 <h4 className="font-bold text-gray-800 mb-2">Impact This Month</h4>
-                <div className="text-2xl font-bold text-swervy-pink mb-1">47</div>
-                <div className="text-sm text-gray-600">Girls reached their confidence goals</div>
+                <div className="text-2xl font-bold text-swervy-pink mb-1">∞</div>
+                <div className="text-sm text-gray-600">Potential for impact</div>
               </div>
             </div>
           </div>
