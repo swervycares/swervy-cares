@@ -22,24 +22,24 @@ export default function Events() {
     },
     {
       id: 2,
-      title: "Community Kit Assembly",
+      title: "Swervy Cares Fundraiser",
       date: "Monday, July 21, 2025",
       time: "10:00 AM",
-      location: "Evergreen Village Square",
-      description: "Volunteers came together to assemble self-care kits for girls in our community.",
-      type: "volunteer",
-      result: "25 kits assembled with 3 volunteers",
+      location: "Fowler Creek Park",
+      description: "Community fundraiser at Fowler Creek Park to support our mission of empowering young girls through self-care kits.",
+      type: "fundraiser",
+      result: "Successful fundraiser with 3 volunteers",
       status: "completed"
     },
     {
       id: 3,
-      title: "Self-Care Workshop",
+      title: "Free Kit Delivery to Care Homes",
       date: "Friday, July 25, 2025",
       time: "2:00 PM",
       location: "Fowler Creek Park",
-      description: "Interactive workshop teaching confidence-building and self-care practices to young girls.",
-      type: "workshop",
-      result: "Empowered 15 girls with 3 volunteers",
+      description: "Special delivery of free self-care kits to local care homes and community centers serving young girls in need.",
+      type: "volunteer",
+      result: "15 kits delivered to care homes with 3 volunteers",
       status: "completed"
     },
     {
