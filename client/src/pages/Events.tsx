@@ -4,7 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Clock, Users, Heart, Gift } from "lucide-react";
 
 export default function Events() {
-  const upcomingEvents = [
+  const upcomingEvents: any[] = [
+    // Upcoming events will be added here
+  ];
+
+  const pastEvents = [
     {
       id: 1,
       title: "Swervy Cares Fundraiser",
@@ -13,14 +17,42 @@ export default function Events() {
       location: "Evergreen Village Square",
       description: "Join us for a community fundraiser to support our mission of empowering young girls through self-care kits.",
       type: "fundraiser",
-      volunteers: "TBD",
-      goal: "Support our mission",
-      status: "upcoming"
+      result: "Successful event with 2 volunteers",
+      status: "completed"
+    },
+    {
+      id: 2,
+      title: "Community Kit Assembly",
+      date: "Monday, July 21, 2025",
+      time: "10:00 AM",
+      location: "Evergreen Village Square",
+      description: "Volunteers came together to assemble self-care kits for girls in our community.",
+      type: "volunteer",
+      result: "25 kits assembled with 3 volunteers",
+      status: "completed"
+    },
+    {
+      id: 3,
+      title: "Self-Care Workshop",
+      date: "Friday, July 25, 2025",
+      time: "2:00 PM",
+      location: "Fowler Creek Park",
+      description: "Interactive workshop teaching confidence-building and self-care practices to young girls.",
+      type: "workshop",
+      result: "Empowered 15 girls with 3 volunteers",
+      status: "completed"
+    },
+    {
+      id: 4,
+      title: "Kit Distribution Day",
+      date: "Saturday, July 26, 2025",
+      time: "11:00 AM",
+      location: "Fowler Creek Park",
+      description: "Special day dedicated to distributing personalized self-care kits to girls in need.",
+      type: "volunteer",
+      result: "30 kits distributed with 3 volunteers",
+      status: "completed"
     }
-  ];
-
-  const pastEvents = [
-    // Past events will be added here as they are completed
   ];
 
   const getEventIcon = (type: string) => {
@@ -81,55 +113,72 @@ export default function Events() {
         </div>
 
         {/* Upcoming Events */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Upcoming Events</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event) => (
-              <Card key={event.id} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0 rounded-2xl overflow-hidden">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-3">
-                    {getEventIcon(event.type)}
-                    <Badge className={`${getTypeColor(event.type)} font-semibold`}>
-                      {event.type}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-bold text-gray-800 mb-2">
-                    {event.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-sm">
-                    {event.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="space-y-3">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Calendar className="w-4 h-4 mr-2 text-pink-500" />
-                      {event.date}
+        {upcomingEvents.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Upcoming Events</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {upcomingEvents.map((event) => (
+                <Card key={event.id} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0 rounded-2xl overflow-hidden">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-3">
+                      {getEventIcon(event.type)}
+                      <Badge className={`${getTypeColor(event.type)} font-semibold`}>
+                        {event.type}
+                      </Badge>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Clock className="w-4 h-4 mr-2 text-purple-500" />
-                      {event.time}
+                    <CardTitle className="text-xl font-bold text-gray-800 mb-2">
+                      {event.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-600 text-sm">
+                      {event.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-3">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Calendar className="w-4 h-4 mr-2 text-pink-500" />
+                        {event.date}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Clock className="w-4 h-4 mr-2 text-purple-500" />
+                        {event.time}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <MapPin className="w-4 h-4 mr-2 text-turquoise-500" />
+                        {event.location}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Users className="w-4 h-4 mr-2 text-pink-500" />
+                        {event.volunteers} volunteers needed
+                      </div>
+                      <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg p-3 mt-4">
+                        <p className="text-sm font-semibold text-gray-700">Goal: {event.goal}</p>
+                      </div>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <MapPin className="w-4 h-4 mr-2 text-turquoise-500" />
-                      {event.location}
-                    </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Users className="w-4 h-4 mr-2 text-pink-500" />
-                      {event.volunteers} volunteers needed
-                    </div>
-                    <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg p-3 mt-4">
-                      <p className="text-sm font-semibold text-gray-700">Goal: {event.goal}</p>
-                    </div>
-                  </div>
-                  <Button className="w-full mt-6 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-semibold py-3 rounded-full transition-all duration-300">
-                    Sign Up to Help
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                    <Button className="w-full mt-6 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-semibold py-3 rounded-full transition-all duration-300">
+                      Sign Up to Help
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* No Upcoming Events Message */}
+        {upcomingEvents.length === 0 && (
+          <div className="mb-16 text-center">
+            <div className="bg-white rounded-2xl shadow-xl p-12 border border-pink-100">
+              <h2 className="text-3xl font-bold mb-4 text-gray-800">No Upcoming Events</h2>
+              <p className="text-gray-600 mb-6">
+                We're planning exciting new events! Check back soon or contact us to suggest an event for your community.
+              </p>
+              <Button className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300">
+                Contact Us
+              </Button>
+            </div>
+          </div>
+        )}
 
         {/* Past Events */}
         {pastEvents.length > 0 && (
