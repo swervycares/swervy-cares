@@ -15,8 +15,7 @@ function getApiBaseUrl(): string {
   }
   
   // In production (GitHub Pages), use Vercel backend
-  // This will be updated with your actual Vercel URL after deployment
-  return 'https://swervy-cares-backend.vercel.app';
+  return 'https://swervy-cares-backend101.vercel.app';
 }
 
 export async function apiRequest(
