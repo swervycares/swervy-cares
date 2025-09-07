@@ -66,6 +66,23 @@ try {
     console.log(`✅ Copied ${file}`);
   });
   
+  // Fix asset paths in HTML for GitHub Pages deployment
+  const indexPath = path.join(distDir, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    let indexContent = fs.readFileSync(indexPath, 'utf8');
+    
+    // Convert absolute paths to relative paths for GitHub Pages
+    indexContent = indexContent.replace(/src="\/assets\//g, 'src="./assets/');
+    indexContent = indexContent.replace(/href="\/assets\//g, 'href="./assets/');
+    
+    // Handle any other absolute paths
+    indexContent = indexContent.replace(/src="\//g, 'src="./');
+    indexContent = indexContent.replace(/href="\//g, 'href="./');
+    
+    fs.writeFileSync(indexPath, indexContent);
+    console.log('🔧 Fixed asset paths in index.html for GitHub Pages');
+  }
+
   // Remove the dist/public directory since files are now in dist
   fs.rmSync(distPublicDir, { recursive: true, force: true });
   console.log('🗑️  Removed dist/public directory');
