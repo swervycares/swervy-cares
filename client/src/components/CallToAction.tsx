@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics";
+import { useLocation } from "wouter";
 
 export default function CallToAction() {
+  const [, setLocation] = useLocation();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -16,12 +19,12 @@ export default function CallToAction() {
 
   const handleVolunteerClick = () => {
     trackEvent('cta_volunteer', 'engagement', 'call_to_action');
-    window.location.href = '/volunteer';
+    setLocation('/volunteer');
   };
 
   const handleDonateClick = () => {
     trackEvent('cta_donate', 'engagement', 'call_to_action');
-    window.location.href = '/donate';
+    setLocation('/donate');
   };
 
   return (
