@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -17,23 +17,29 @@ import Stories from "@/pages/Stories";
 import Events from "@/pages/Events";
 import NotFound from "@/pages/not-found";
 
-function Router() {
+function AppRouter() {
   // Track page views when routes change
   useAnalytics();
   
+  // Detect if we're running on GitHub Pages
+  const isGitHubPages = window.location.hostname === 'swervycares.github.io';
+  const basePath = isGitHubPages ? '/swervy-cares' : '';
+  
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/mission" component={Mission} />
-      <Route path="/volunteer" component={Volunteer} />
-      <Route path="/donate" component={Donate} />
-      <Route path="/share" component={Share} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/communities" component={Communities} />
-      <Route path="/stories" component={Stories} />
-      <Route path="/events" component={Events} />
-      <Route component={NotFound} />
-    </Switch>
+    <Router base={basePath}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/mission" component={Mission} />
+        <Route path="/volunteer" component={Volunteer} />
+        <Route path="/donate" component={Donate} />
+        <Route path="/share" component={Share} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/communities" component={Communities} />
+        <Route path="/stories" component={Stories} />
+        <Route path="/events" component={Events} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
   );
 }
 
@@ -52,7 +58,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <AppRouter />
       </TooltipProvider>
     </QueryClientProvider>
   );
