@@ -7,16 +7,31 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
+// Get the API base URL based on environment
+function getApiBaseUrl(): string {
+  // In development (localhost), use local server
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return '';
+  }
+  
+  // In production (GitHub Pages), use Vercel backend
+  // This will be updated with your actual Vercel URL after deployment
+  return 'https://swervy-cares-backend.vercel.app';
+}
+
 export async function apiRequest(
   method: string,
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  const res = await fetch(url, {
+  const baseUrl = getApiBaseUrl();
+  const fullUrl = baseUrl + url;
+  
+  const res = await fetch(fullUrl, {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},
     body: data ? JSON.stringify(data) : undefined,
-    credentials: "include",
+    credentials: baseUrl ? "omit" : "include", // No credentials for cross-origin
   });
 
   await throwIfResNotOk(res);
