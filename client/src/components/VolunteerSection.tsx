@@ -28,14 +28,6 @@ export default function VolunteerSection() {
 
         {/* Volunteer Opportunities Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {/* Kit Assembly */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border-t-4 border-swervy-pink">
-            <div className="text-4xl mb-4">🏡</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Kit Assembly</h3>
-            <p className="text-sm text-swervy-pink font-semibold mb-3">2-4 hours/week</p>
-            <p className="text-gray-600 mb-4">Help us assemble and personalize self-care kits with love and attention to detail.</p>
-            <p className="text-sm text-gray-700"><strong>Perfect for:</strong> Detail-oriented individuals who love crafting</p>
-          </div>
 
           {/* Community Outreach */}
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border-t-4 border-swervy-turquoise">
@@ -55,14 +47,6 @@ export default function VolunteerSection() {
             <p className="text-sm text-gray-700"><strong>Perfect for:</strong> Creative digital marketing enthusiasts</p>
           </div>
 
-          {/* Workshop Facilitation */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border-t-4 border-purple-500">
-            <div className="text-4xl mb-4">🎓</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Workshop Facilitation</h3>
-            <p className="text-sm text-purple-500 font-semibold mb-3">2-4 hours/month</p>
-            <p className="text-gray-600 mb-4">Lead workshops on self-care, confidence building, and body positivity.</p>
-            <p className="text-sm text-gray-700"><strong>Perfect for:</strong> Experienced educators and speakers</p>
-          </div>
 
           {/* Creative Design */}
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border-t-4 border-orange-500">
@@ -73,14 +57,6 @@ export default function VolunteerSection() {
             <p className="text-sm text-gray-700"><strong>Perfect for:</strong> Designers and creative professionals</p>
           </div>
 
-          {/* Administrative Support */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border-t-4 border-green-500">
-            <div className="text-4xl mb-4">📝</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Administrative Support</h3>
-            <p className="text-sm text-green-500 font-semibold mb-3">3-5 hours/week</p>
-            <p className="text-gray-600 mb-4">Support operations with data entry, communication, and scheduling tasks.</p>
-            <p className="text-sm text-gray-700"><strong>Perfect for:</strong> Organized, detail-oriented individuals</p>
-          </div>
         </div>
 
         {/* Call to Action */}
