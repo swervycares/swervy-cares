@@ -100,20 +100,14 @@ export default function FAQSection() {
           <div className="bg-white rounded-xl p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">Still have questions?</h3>
             <p className="text-gray-600 mb-6">
-              We'd love to hear from you! Reach out through our contact form or social media.
+              We'd love to hear from you! Reach out through email or social media.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex justify-center">
               <a 
                 href="mailto:aishniragh@icloud.com" 
                 className="bg-swervy-pink text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-500 transition-colors"
               >
                 Email Us
-              </a>
-              <a 
-                href="#" 
-                className="bg-swervy-turquoise text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-500 transition-colors"
-              >
-                Contact Form
               </a>
             </div>
           </div>
