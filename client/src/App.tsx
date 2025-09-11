@@ -15,6 +15,7 @@ import Blog from "@/pages/Blog";
 import Communities from "@/pages/Communities";
 import Stories from "@/pages/Stories";
 import Events from "@/pages/Events";
+import KitRequest from "@/pages/KitRequest";
 import NotFound from "@/pages/not-found";
 
 function AppRouter() {
@@ -37,6 +38,7 @@ function AppRouter() {
         <Route path="/communities" component={Communities} />
         <Route path="/stories" component={Stories} />
         <Route path="/events" component={Events} />
+        <Route path="/request" component={KitRequest} />
         <Route component={NotFound} />
       </Switch>
     </Router>
