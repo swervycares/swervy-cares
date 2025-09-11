@@ -63,7 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     };
 
     // Submit to Google Sheets (existing Sheety API)
-    const sheetResponse = await fetch('https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/swervy/sheet1', {
+    const sheetResponse = await fetch('https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/swervyCares/sheet1', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
