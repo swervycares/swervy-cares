@@ -19,13 +19,15 @@ export const kitRequests = pgTable("kit_requests", {
   phone: text("phone"),
   // Organization fields
   organizationName: text("organization_name"),
-  contactPerson: text("contact_person"),
+  staffName: text("staff_name"), // Staff member's name making the request
+  staffRole: text("staff_role"), // Staff member's role (case manager, volunteer, etc.)
   contactEmail: text("contact_email"),
   contactPhone: text("contact_phone"),
   organizationType: text("organization_type"),
   quantity: integer("quantity"),
   ageGroups: text("age_groups"),
   specialNeeds: text("special_needs"),
+  bulkCustomization: text("bulk_customization"), // For bulk order preferences
   // Product preferences
   shade: text("shade"),
   scent: text("scent"),
@@ -68,13 +70,15 @@ export const kitRequestValidationSchema = z.object({
   phone: z.string().optional(),
   // Organization fields
   organizationName: z.string().optional(),
-  contactPerson: z.string().optional(),
+  staffName: z.string().optional(), // Staff member's name making the request
+  staffRole: z.string().optional(), // Staff member's role
   contactEmail: z.string().optional(),
   contactPhone: z.string().optional(),
   organizationType: z.string().optional(),
   quantity: z.union([z.string(), z.number()]).optional(),
   ageGroups: z.string().optional(),
   specialNeeds: z.string().optional(),
+  bulkCustomization: z.string().optional(), // For bulk order preferences
   // Product preferences (conditional based on request type)
   shade: z.string().optional(),
   scent: z.string().optional(),
@@ -162,11 +166,18 @@ export const kitRequestValidationSchema = z.object({
         path: ["organizationName"]
       });
     }
-    if (!data.contactPerson || data.contactPerson.length === 0) {
+    if (!data.staffName || data.staffName.length === 0) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: "Contact person is required",
-        path: ["contactPerson"]
+        message: "Your name is required",
+        path: ["staffName"]
+      });
+    }
+    if (!data.staffRole || data.staffRole.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Your role is required",
+        path: ["staffRole"]
       });
     }
     if (!data.contactEmail || data.contactEmail.length === 0) {

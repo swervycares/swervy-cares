@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useMutation } from "@tanstack/react-query";
@@ -33,13 +34,15 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
       email: "",
       phone: "",
       organizationName: "",
-      contactPerson: "",
+      staffName: "",
+      staffRole: "",
       contactEmail: "",
       contactPhone: "",
       organizationType: "",
       quantity: "",
       ageGroups: "",
       specialNeeds: "",
+      bulkCustomization: "",
       shade: aiSuggestions?.lipShade || "",
       scent: aiSuggestions?.scent || "",
       lashes: aiSuggestions?.lashes || "",
@@ -139,11 +142,11 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
 
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                {/* Request Type Selector */}
+                {/* Who is requesting selector with radio buttons */}
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold text-gray-800 flex items-center">
                     <span className="w-8 h-8 bg-swervy-pink text-white rounded-full flex items-center justify-center text-sm mr-3">1</span>
-                    Request Type
+                    Who is requesting?
                   </h3>
                   
                   <FormField
@@ -151,18 +154,26 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                     name="requestType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-lg font-semibold text-gray-700">Who is this request for?</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="h-12">
-                              <SelectValue placeholder="Select request type" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="individual">💁‍♀️ Individual Request - For myself or one person</SelectItem>
-                            <SelectItem value="organization">🏢 Organization/Bulk Request - For multiple people or through an organization</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <FormControl>
+                          <RadioGroup 
+                            onValueChange={field.onChange} 
+                            defaultValue={field.value} 
+                            className="space-y-4"
+                          >
+                            <div className="flex items-center space-x-3 p-4 border border-gray-200 rounded-xl hover:border-swervy-pink hover:bg-pink-50 transition-colors">
+                              <RadioGroupItem value="individual" id="individual" />
+                              <FormLabel htmlFor="individual" className="text-base font-medium text-gray-700 cursor-pointer flex-1">
+                                💁‍♀️ I am an individual requesting a kit for myself.
+                              </FormLabel>
+                            </div>
+                            <div className="flex items-center space-x-3 p-4 border border-gray-200 rounded-xl hover:border-swervy-turquoise hover:bg-teal-50 transition-colors">
+                              <RadioGroupItem value="organization" id="organization" />
+                              <FormLabel htmlFor="organization" className="text-base font-medium text-gray-700 cursor-pointer flex-1">
+                                🏢 I am an organization/staff member requesting kits for clients.
+                              </FormLabel>
+                            </div>
+                          </RadioGroup>
+                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -174,18 +185,34 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                   <div className="space-y-6 border-t border-gray-200 pt-8">
                     <h3 className="text-2xl font-bold text-gray-800 flex items-center">
                       <span className="w-8 h-8 bg-swervy-turquoise text-white rounded-full flex items-center justify-center text-sm mr-3">2</span>
-                      Organization Details
+                      Organization & Contact Information
                     </h3>
                     
+                    {/* Organization Name */}
+                    <FormField
+                      control={form.control}
+                      name="organizationName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-semibold text-gray-700">Organization Name *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="e.g., Women's Shelter, Community Center" className="h-12" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    {/* Your Name & Role */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <FormField
                         control={form.control}
-                        name="organizationName"
+                        name="staffName"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-semibold text-gray-700">Organization Name *</FormLabel>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Your Name *</FormLabel>
                             <FormControl>
-                              <Input placeholder="e.g., Women's Shelter, Community Center" {...field} />
+                              <Input placeholder="Your full name" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -194,22 +221,25 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                       
                       <FormField
                         control={form.control}
-                        name="organizationType"
+                        name="staffRole"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-semibold text-gray-700">Organization Type</FormLabel>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Your Role *</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
                                 <SelectTrigger>
-                                  <SelectValue placeholder="Select organization type" />
+                                  <SelectValue placeholder="Select your role" />
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="shelter">Women's Shelter</SelectItem>
-                                <SelectItem value="community-center">Community Center</SelectItem>
-                                <SelectItem value="nonprofit">Nonprofit Organization</SelectItem>
-                                <SelectItem value="school">School/Educational</SelectItem>
-                                <SelectItem value="healthcare">Healthcare/Clinic</SelectItem>
+                                <SelectItem value="case-manager">Case Manager</SelectItem>
+                                <SelectItem value="social-worker">Social Worker</SelectItem>
+                                <SelectItem value="volunteer">Volunteer</SelectItem>
+                                <SelectItem value="director">Director</SelectItem>
+                                <SelectItem value="coordinator">Program Coordinator</SelectItem>
+                                <SelectItem value="counselor">Counselor</SelectItem>
+                                <SelectItem value="teacher">Teacher</SelectItem>
+                                <SelectItem value="nurse">Nurse/Healthcare Provider</SelectItem>
                                 <SelectItem value="other">Other</SelectItem>
                               </SelectContent>
                             </Select>
@@ -218,16 +248,17 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                         )}
                       />
                     </div>
-
+                    
+                    {/* Email & Phone for follow-up */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <FormField
                         control={form.control}
-                        name="contactPerson"
+                        name="contactEmail"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-semibold text-gray-700">Contact Person *</FormLabel>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Email (for follow-up) *</FormLabel>
                             <FormControl>
-                              <Input placeholder="Primary contact name" {...field} />
+                              <Input type="email" placeholder="your.email@organization.org" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -236,26 +267,10 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                       
                       <FormField
                         control={form.control}
-                        name="contactEmail"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-sm font-semibold text-gray-700">Contact Email *</FormLabel>
-                            <FormControl>
-                              <Input type="email" placeholder="contact@organization.org" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
                         name="contactPhone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-semibold text-gray-700">Contact Phone</FormLabel>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Phone (optional)</FormLabel>
                             <FormControl>
                               <Input type="tel" placeholder="(555) 123-4567" {...field} />
                             </FormControl>
@@ -263,28 +278,30 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                           </FormItem>
                         )}
                       />
-                      
-                      <FormField
-                        control={form.control}
-                        name="quantity"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-sm font-semibold text-gray-700">Number of Kits Needed *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="e.g., 10, 25, 50" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
                     </div>
 
+                    {/* Number of Kits Requested */}
+                    <FormField
+                      control={form.control}
+                      name="quantity"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-semibold text-gray-700">Number of Kits Requested *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="e.g., 10, 25, 50" className="h-12" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    {/* Additional Information */}
                     <FormField
                       control={form.control}
                       name="ageGroups"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-semibold text-gray-700">Age Groups of Recipients</FormLabel>
+                          <FormLabel className="text-sm font-semibold text-gray-700">Age Groups of Recipients (optional)</FormLabel>
                           <FormControl>
                             <Textarea 
                               placeholder="e.g., Mix of 12-16 year olds, mostly 14-15 year olds, etc."
@@ -302,7 +319,7 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                       name="specialNeeds"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-semibold text-gray-700">Special Considerations or Needs</FormLabel>
+                          <FormLabel className="text-sm font-semibold text-gray-700">Special Considerations or Needs (optional)</FormLabel>
                           <FormControl>
                             <Textarea 
                               placeholder="Any specific needs, allergies, cultural considerations, or special circumstances we should know about"
@@ -310,6 +327,33 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                               {...field} 
                             />
                           </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    {/* Bulk Customization Preferences */}
+                    <FormField
+                      control={form.control}
+                      name="bulkCustomization"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-semibold text-gray-700">Customization Preferences for Bulk Order (optional)</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select customization preference" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="mixed-variety">🌈 Mixed Variety - Different colors/scents for variety</SelectItem>
+                              <SelectItem value="age-appropriate">👥 Age-Appropriate - Customize based on age groups</SelectItem>
+                              <SelectItem value="cultural-preferences">🌍 Cultural Preferences - Consider cultural/religious needs</SelectItem>
+                              <SelectItem value="specific-colors">🎨 Specific Colors - I have preferred colors in mind</SelectItem>
+                              <SelectItem value="neutral-tones">🤍 Neutral Tones - Stick to neutral, universal colors</SelectItem>
+                              <SelectItem value="no-preference">✨ No Preference - Surprise us with your best selection</SelectItem>
+                            </SelectContent>
+                          </Select>
                           <FormMessage />
                         </FormItem>
                       )}

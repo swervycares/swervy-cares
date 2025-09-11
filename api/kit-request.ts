@@ -43,13 +43,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       phone: submissionData.phone || '',
       // Organization Information (for bulk orders)
       organizationName: submissionData.organizationName || '',
-      contactPerson: submissionData.contactPerson || '',
+      staffName: submissionData.staffName || '',
+      staffRole: submissionData.staffRole || '',
       contactEmail: submissionData.contactEmail || '',
       contactPhone: submissionData.contactPhone || '',
       organizationType: submissionData.organizationType || '',
       quantity: submissionData.requestType === 'organization' && submissionData.quantity ? Number(submissionData.quantity) : submissionData.quantity || '',
       ageGroups: submissionData.ageGroups || '',
       specialNeeds: submissionData.specialNeeds || '',
+      bulkCustomization: submissionData.bulkCustomization || '',
       // Product Preferences (optional for organization requests)
       shade: submissionData.shade || '',
       scent: submissionData.scent || '',
