@@ -18,10 +18,10 @@ const kitRequestSchema = z.object({
   requestType: z.enum(["individual", "organization"], {
     required_error: "Please select a request type"
   }),
-  // Individual fields
-  name: z.string().min(1, "Name is required"),
-  age: z.string().min(1, "Age range is required"),
-  address: z.string().min(1, "Address is required"),
+  // Individual/Recipient fields (optional for bulk org orders)
+  name: z.string().optional(),
+  age: z.string().optional(),
+  address: z.string().optional(),
   email: z.string().optional(),
   phone: z.string().optional(),
   // Organization fields
@@ -42,15 +42,75 @@ const kitRequestSchema = z.object({
   confidence: z.string().min(1, "Please share what makes you feel confident"),
   consent: z.boolean().refine(val => val === true, "Consent is required"),
   aiSuggestions: z.string().optional()
-}).refine((data) => {
-  // Conditional validation based on request type
-  if (data.requestType === "organization") {
-    return data.organizationName && data.contactPerson && data.contactEmail && data.quantity;
+}).superRefine((data, ctx) => {
+  // Individual requests require personal details
+  if (data.requestType === "individual") {
+    if (!data.name || data.name.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Name is required for individual requests",
+        path: ["name"]
+      });
+    }
+    if (!data.age || data.age.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Age range is required for individual requests",
+        path: ["age"]
+      });
+    }
+    if (!data.address || data.address.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Address is required for individual requests",
+        path: ["address"]
+      });
+    }
   }
-  return true;
-}, {
-  message: "Organization requests require organization name, contact person, email, and quantity",
-  path: ["organizationName"]
+  
+  // Organization requests require org details
+  if (data.requestType === "organization") {
+    if (!data.organizationName || data.organizationName.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Organization name is required",
+        path: ["organizationName"]
+      });
+    }
+    if (!data.contactPerson || data.contactPerson.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Contact person is required",
+        path: ["contactPerson"]
+      });
+    }
+    if (!data.contactEmail || data.contactEmail.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Contact email is required",
+        path: ["contactEmail"]
+      });
+    } else if (data.contactEmail && !z.string().email().safeParse(data.contactEmail).success) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please enter a valid email address",
+        path: ["contactEmail"]
+      });
+    }
+    if (!data.quantity || data.quantity.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Number of kits is required",
+        path: ["quantity"]
+      });
+    } else if (data.quantity && isNaN(Number(data.quantity)) || Number(data.quantity) <= 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please enter a valid number greater than 0",
+        path: ["quantity"]
+      });
+    }
+  }
 });
 
 type KitRequestForm = z.infer<typeof kitRequestSchema>;
@@ -460,8 +520,10 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                 {/* Preferences Section */}
                 <div className="space-y-6 border-t border-gray-200 pt-8">
                   <h3 className="text-2xl font-bold text-gray-800 flex items-center">
-                    <span className="w-8 h-8 bg-swervy-turquoise text-white rounded-full flex items-center justify-center text-sm mr-3">2</span>
-                    Your Preferences
+                    <span className="w-8 h-8 bg-swervy-turquoise text-white rounded-full flex items-center justify-center text-sm mr-3">
+                      {requestType === "organization" ? "4" : "3"}
+                    </span>
+                    {requestType === "organization" ? "Product Preferences" : "Your Preferences"}
                   </h3>
 
                   <div className="grid md:grid-cols-2 gap-6">
@@ -638,8 +700,10 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
                 {/* Personal Touch Section */}
                 <div className="space-y-6 border-t border-gray-200 pt-8">
                   <h3 className="text-2xl font-bold text-gray-800 flex items-center">
-                    <span className="w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm mr-3">3</span>
-                    Your Personal Touch
+                    <span className="w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm mr-3">
+                      {requestType === "organization" ? "5" : "4"}
+                    </span>
+                    {requestType === "organization" ? "Personal Touch" : "Your Personal Touch"}
                   </h3>
                   
                   <FormField
@@ -664,6 +728,12 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
 
                 {/* Consent and Submit */}
                 <div className="space-y-6 border-t border-gray-200 pt-8">
+                  <h3 className="text-2xl font-bold text-gray-800 flex items-center">
+                    <span className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm mr-3">
+                      {requestType === "organization" ? "6" : "5"}
+                    </span>
+                    Submit Your Request
+                  </h3>
                   <FormField
                     control={form.control}
                     name="consent"
