@@ -14,7 +14,7 @@ export default function CallToAction() {
 
   const handleGetKitClick = () => {
     trackEvent('cta_kit_request', 'engagement', 'call_to_action');
-    scrollToSection('kit-request');
+    scrollToSection('request');
   };
 
   const handleVolunteerClick = () => {

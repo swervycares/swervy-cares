@@ -218,7 +218,7 @@ export default function SuccessSpotlight() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a 
-                href="#kit-request"
+                href="#request"
                 className="bg-gradient-to-r from-swervy-pink to-swervy-purple text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               >
                 Start Your Journey
