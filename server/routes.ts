@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
 import { generateChatResponse, generateKitRecommendations, type ChatMessage } from "./services/openai";
+import { kitRequestValidationSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // AI Chat endpoint
@@ -41,22 +42,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Kit Request submission (maintains existing Google Sheets integration)
   app.post("/api/kit-request", async (req, res) => {
     try {
-      const kitRequestSchema = z.object({
-        name: z.string().min(1),
-        age: z.string().min(1),
-        address: z.string().min(1),
-        email: z.string().optional(),
-        phone: z.string().optional(),
-        shade: z.string().min(1),
-        scent: z.string().min(1),
-        lashes: z.string().min(1),
-        oil: z.string().min(1),
-        scrub: z.string().min(1),
-        confidence: z.string().min(1),
-        aiSuggestions: z.string().optional()
-      });
+      const validatedData = kitRequestValidationSchema.parse(req.body);
 
-      const validatedData = kitRequestSchema.parse(req.body);
+      // Organize data for Google Sheets with proper structure (consent field is removed by destructuring)
+      const { consent, ...submissionData } = validatedData;
+      const organizationSubmissionData = {
+        submissionDate: new Date().toISOString(),
+        requestType: submissionData.requestType,
+        // Individual/Recipient Information  
+        name: submissionData.name || '',
+        age: submissionData.age || '',
+        address: submissionData.address || '',
+        email: submissionData.email || '',
+        phone: submissionData.phone || '',
+        // Organization Information (for bulk orders)
+        organizationName: submissionData.organizationName || '',
+        contactPerson: submissionData.contactPerson || '',
+        contactEmail: submissionData.contactEmail || '',
+        contactPhone: submissionData.contactPhone || '',
+        organizationType: submissionData.organizationType || '',
+        quantity: submissionData.requestType === 'organization' && submissionData.quantity ? Number(submissionData.quantity) : submissionData.quantity || '',
+        ageGroups: submissionData.ageGroups || '',
+        specialNeeds: submissionData.specialNeeds || '',
+        // Product Preferences (optional for organization requests)
+        shade: submissionData.shade || '',
+        scent: submissionData.scent || '',
+        lashes: submissionData.lashes || '',
+        oil: submissionData.oil || '',
+        scrub: submissionData.scrub || '',
+        confidence: submissionData.confidence || '',
+        aiSuggestions: submissionData.aiSuggestions || ''
+      };
 
       // Submit to Google Sheets (existing Sheety API)
       const sheetResponse = await fetch('https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/swervy/sheet1', {
@@ -64,7 +80,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ sheet1: validatedData })
+        body: JSON.stringify({ sheet1: organizationSubmissionData })
       });
 
       if (!sheetResponse.ok) {

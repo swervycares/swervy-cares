@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { kitRequestValidationSchema, type KitRequestForm as KitRequestFormData } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { Input } from "@/components/ui/input";
@@ -14,106 +14,6 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
-const kitRequestSchema = z.object({
-  requestType: z.enum(["individual", "organization"], {
-    required_error: "Please select a request type"
-  }),
-  // Individual/Recipient fields (optional for bulk org orders)
-  name: z.string().optional(),
-  age: z.string().optional(),
-  address: z.string().optional(),
-  email: z.string().optional(),
-  phone: z.string().optional(),
-  // Organization fields
-  organizationName: z.string().optional(),
-  contactPerson: z.string().optional(),
-  contactEmail: z.string().optional(),
-  contactPhone: z.string().optional(),
-  organizationType: z.string().optional(),
-  quantity: z.string().optional(),
-  ageGroups: z.string().optional(),
-  specialNeeds: z.string().optional(),
-  // Product preferences
-  shade: z.string().min(1, "Lip shade preference is required"),
-  scent: z.string().min(1, "Scent preference is required"),
-  lashes: z.string().min(1, "Lashes preference is required"),
-  oil: z.string().min(1, "Lip oil preference is required"),
-  scrub: z.string().min(1, "Lip scrub preferences are required"),
-  confidence: z.string().min(1, "Please share what makes you feel confident"),
-  consent: z.boolean().refine(val => val === true, "Consent is required"),
-  aiSuggestions: z.string().optional()
-}).superRefine((data, ctx) => {
-  // Individual requests require personal details
-  if (data.requestType === "individual") {
-    if (!data.name || data.name.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Name is required for individual requests",
-        path: ["name"]
-      });
-    }
-    if (!data.age || data.age.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Age range is required for individual requests",
-        path: ["age"]
-      });
-    }
-    if (!data.address || data.address.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Address is required for individual requests",
-        path: ["address"]
-      });
-    }
-  }
-  
-  // Organization requests require org details
-  if (data.requestType === "organization") {
-    if (!data.organizationName || data.organizationName.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Organization name is required",
-        path: ["organizationName"]
-      });
-    }
-    if (!data.contactPerson || data.contactPerson.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Contact person is required",
-        path: ["contactPerson"]
-      });
-    }
-    if (!data.contactEmail || data.contactEmail.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Contact email is required",
-        path: ["contactEmail"]
-      });
-    } else if (data.contactEmail && !z.string().email().safeParse(data.contactEmail).success) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Please enter a valid email address",
-        path: ["contactEmail"]
-      });
-    }
-    if (!data.quantity || data.quantity.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Number of kits is required",
-        path: ["quantity"]
-      });
-    } else if (data.quantity && isNaN(Number(data.quantity)) || Number(data.quantity) <= 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Please enter a valid number greater than 0",
-        path: ["quantity"]
-      });
-    }
-  }
-});
-
-type KitRequestForm = z.infer<typeof kitRequestSchema>;
 
 interface KitRequestFormProps {
   aiSuggestions?: any;
@@ -123,8 +23,8 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  const form = useForm<KitRequestForm>({
-    resolver: zodResolver(kitRequestSchema),
+  const form = useForm<KitRequestFormData>({
+    resolver: zodResolver(kitRequestValidationSchema),
     defaultValues: {
       requestType: "individual",
       name: "",
@@ -154,7 +54,7 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
   const requestType = form.watch("requestType");
 
   const submitMutation = useMutation({
-    mutationFn: async (data: KitRequestForm) => {
+    mutationFn: async (data: KitRequestFormData) => {
       const { consent, ...submitData } = data;
       const response = await apiRequest('POST', '/api/kit-request', submitData);
       return response.json();
@@ -175,7 +75,7 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
     }
   });
 
-  const onSubmit = (data: KitRequestForm) => {
+  const onSubmit = (data: KitRequestFormData) => {
     submitMutation.mutate(data);
   };
 
