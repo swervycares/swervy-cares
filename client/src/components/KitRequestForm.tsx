@@ -15,11 +15,25 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
 const kitRequestSchema = z.object({
+  requestType: z.enum(["individual", "organization"], {
+    required_error: "Please select a request type"
+  }),
+  // Individual fields
   name: z.string().min(1, "Name is required"),
   age: z.string().min(1, "Age range is required"),
   address: z.string().min(1, "Address is required"),
   email: z.string().optional(),
   phone: z.string().optional(),
+  // Organization fields
+  organizationName: z.string().optional(),
+  contactPerson: z.string().optional(),
+  contactEmail: z.string().optional(),
+  contactPhone: z.string().optional(),
+  organizationType: z.string().optional(),
+  quantity: z.string().optional(),
+  ageGroups: z.string().optional(),
+  specialNeeds: z.string().optional(),
+  // Product preferences
   shade: z.string().min(1, "Lip shade preference is required"),
   scent: z.string().min(1, "Scent preference is required"),
   lashes: z.string().min(1, "Lashes preference is required"),
@@ -28,6 +42,15 @@ const kitRequestSchema = z.object({
   confidence: z.string().min(1, "Please share what makes you feel confident"),
   consent: z.boolean().refine(val => val === true, "Consent is required"),
   aiSuggestions: z.string().optional()
+}).refine((data) => {
+  // Conditional validation based on request type
+  if (data.requestType === "organization") {
+    return data.organizationName && data.contactPerson && data.contactEmail && data.quantity;
+  }
+  return true;
+}, {
+  message: "Organization requests require organization name, contact person, email, and quantity",
+  path: ["organizationName"]
 });
 
 type KitRequestForm = z.infer<typeof kitRequestSchema>;
@@ -43,11 +66,20 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
   const form = useForm<KitRequestForm>({
     resolver: zodResolver(kitRequestSchema),
     defaultValues: {
+      requestType: "individual",
       name: "",
       age: "",
       address: "",
       email: "",
       phone: "",
+      organizationName: "",
+      contactPerson: "",
+      contactEmail: "",
+      contactPhone: "",
+      organizationType: "",
+      quantity: "",
+      ageGroups: "",
+      specialNeeds: "",
       shade: aiSuggestions?.lipShade || "",
       scent: aiSuggestions?.scent || "",
       lashes: aiSuggestions?.lashes || "",
@@ -58,6 +90,8 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
       aiSuggestions: aiSuggestions ? JSON.stringify(aiSuggestions) : ""
     }
   });
+
+  const requestType = form.watch("requestType");
 
   const submitMutation = useMutation({
     mutationFn: async (data: KitRequestForm) => {
@@ -145,12 +179,198 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
 
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                {/* Personal Information */}
+                {/* Request Type Selector */}
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold text-gray-800 flex items-center">
                     <span className="w-8 h-8 bg-swervy-pink text-white rounded-full flex items-center justify-center text-sm mr-3">1</span>
-                    About You
+                    Request Type
                   </h3>
+                  
+                  <FormField
+                    control={form.control}
+                    name="requestType"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-lg font-semibold text-gray-700">Who is this request for?</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="h-12">
+                              <SelectValue placeholder="Select request type" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="individual">💁‍♀️ Individual Request - For myself or one person</SelectItem>
+                            <SelectItem value="organization">🏢 Organization/Bulk Request - For multiple people or through an organization</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                {/* Organization Information (only show if organization request) */}
+                {requestType === "organization" && (
+                  <div className="space-y-6 border-t border-gray-200 pt-8">
+                    <h3 className="text-2xl font-bold text-gray-800 flex items-center">
+                      <span className="w-8 h-8 bg-swervy-turquoise text-white rounded-full flex items-center justify-center text-sm mr-3">2</span>
+                      Organization Details
+                    </h3>
+                    
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="organizationName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Organization Name *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="e.g., Women's Shelter, Community Center" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="organizationType"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Organization Type</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select organization type" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="shelter">Women's Shelter</SelectItem>
+                                <SelectItem value="community-center">Community Center</SelectItem>
+                                <SelectItem value="nonprofit">Nonprofit Organization</SelectItem>
+                                <SelectItem value="school">School/Educational</SelectItem>
+                                <SelectItem value="healthcare">Healthcare/Clinic</SelectItem>
+                                <SelectItem value="other">Other</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="contactPerson"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Contact Person *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Primary contact name" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="contactEmail"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Contact Email *</FormLabel>
+                            <FormControl>
+                              <Input type="email" placeholder="contact@organization.org" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="contactPhone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Contact Phone</FormLabel>
+                            <FormControl>
+                              <Input type="tel" placeholder="(555) 123-4567" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="quantity"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-semibold text-gray-700">Number of Kits Needed *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="e.g., 10, 25, 50" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="ageGroups"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-semibold text-gray-700">Age Groups of Recipients</FormLabel>
+                          <FormControl>
+                            <Textarea 
+                              placeholder="e.g., Mix of 12-16 year olds, mostly 14-15 year olds, etc."
+                              className="min-h-[80px]"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="specialNeeds"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-semibold text-gray-700">Special Considerations or Needs</FormLabel>
+                          <FormControl>
+                            <Textarea 
+                              placeholder="Any specific needs, allergies, cultural considerations, or special circumstances we should know about"
+                              className="min-h-[100px]"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                )}
+
+                {/* Individual/Recipient Information */}
+                <div className="space-y-6 border-t border-gray-200 pt-8">
+                  <h3 className="text-2xl font-bold text-gray-800 flex items-center">
+                    <span className="w-8 h-8 bg-swervy-pink text-white rounded-full flex items-center justify-center text-sm mr-3">
+                      {requestType === "organization" ? "3" : "2"}
+                    </span>
+                    {requestType === "organization" ? "Recipient Information (if specific)" : "About You"}
+                  </h3>
+                  
+                  {requestType === "organization" && (
+                    <p className="text-gray-600 text-sm mb-4">
+                      If you're ordering for a specific person, fill out their details. For bulk orders with mixed preferences, you can leave some fields general.
+                    </p>
+                  )}
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <FormField
