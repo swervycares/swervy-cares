@@ -25,7 +25,7 @@ jobs:
       
     - name: Build application for static deployment
       run: |
-        npm run build:static || (vite build --config vite.config.static.ts && node build-for-static-deployment.js)
+        npm run build
       env:
         VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
         
@@ -34,4 +34,4 @@ jobs:
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        publish_dir: ./dist/public
