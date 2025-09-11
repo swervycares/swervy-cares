@@ -2,6 +2,7 @@
 interface VercelRequest {
   method?: string;
   body: any;
+  headers?: Record<string, string>;
 }
 
 interface VercelResponse {
@@ -14,8 +15,19 @@ import { ZodError } from 'zod';
 import { kitRequestValidationSchema } from '../shared/schema';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Handle CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // Handle CORS - restrict to specific domains for security
+  const allowedOrigins = [
+    'https://swervycares.com',
+    'https://www.swervycares.com', 
+    'https://swervycares.github.io',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173'
+  ];
+  const origin = req.headers?.origin || '';
+  
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
