@@ -3,7 +3,7 @@ import express2 from "express";
 
 // server/routes.ts
 import { createServer } from "http";
-import { z } from "zod";
+import { z as z2 } from "zod";
 
 // server/services/openai.ts
 import OpenAI from "openai";
@@ -364,6 +364,220 @@ function generateFallbackKitRecommendations(chatHistory) {
   };
 }
 
+// shared/schema.ts
+import { pgTable, text, serial, integer, timestamp } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
+var users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull()
+});
+var kitRequests = pgTable("kit_requests", {
+  id: serial("id").primaryKey(),
+  requestType: text("request_type").notNull(),
+  // Individual/Recipient fields
+  name: text("name"),
+  age: text("age"),
+  address: text("address"),
+  email: text("email"),
+  phone: text("phone"),
+  // Organization fields
+  organizationName: text("organization_name"),
+  staffName: text("staff_name"),
+  // Staff member's name making the request
+  staffRole: text("staff_role"),
+  // Staff member's role (case manager, volunteer, etc.)
+  contactEmail: text("contact_email"),
+  contactPhone: text("contact_phone"),
+  organizationType: text("organization_type"),
+  quantity: integer("quantity"),
+  ageGroups: text("age_groups"),
+  specialNeeds: text("special_needs"),
+  bulkCustomization: text("bulk_customization"),
+  // For bulk order preferences
+  // Product preferences
+  shade: text("shade"),
+  scent: text("scent"),
+  lashes: text("lashes"),
+  oil: text("oil"),
+  scrub: text("scrub"),
+  confidence: text("confidence"),
+  aiSuggestions: text("ai_suggestions"),
+  createdAt: timestamp("created_at").defaultNow()
+});
+var chatSessions = pgTable("chat_sessions", {
+  id: serial("id").primaryKey(),
+  sessionId: text("session_id").notNull(),
+  messages: text("messages").notNull(),
+  // JSON string of messages
+  recommendations: text("recommendations"),
+  // JSON string of AI recommendations
+  createdAt: timestamp("created_at").defaultNow()
+});
+var insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true
+});
+var insertKitRequestSchema = createInsertSchema(kitRequests).omit({
+  id: true,
+  createdAt: true
+});
+var kitRequestValidationSchema = z.object({
+  requestType: z.enum(["individual", "organization"], {
+    required_error: "Please select a request type"
+  }),
+  // Individual/Recipient fields (optional for bulk org orders)
+  name: z.string().optional(),
+  age: z.string().optional(),
+  address: z.string().optional(),
+  email: z.string().optional(),
+  phone: z.string().optional(),
+  // Organization fields
+  organizationName: z.string().optional(),
+  staffName: z.string().optional(),
+  // Staff member's name making the request
+  staffRole: z.string().optional(),
+  // Staff member's role
+  contactEmail: z.string().optional(),
+  contactPhone: z.string().optional(),
+  organizationType: z.string().optional(),
+  quantity: z.union([z.string(), z.number()]).optional(),
+  ageGroups: z.string().optional(),
+  specialNeeds: z.string().optional(),
+  bulkCustomization: z.string().optional(),
+  // For bulk order preferences
+  // Product preferences (conditional based on request type)
+  shade: z.string().optional(),
+  scent: z.string().optional(),
+  lashes: z.string().optional(),
+  oil: z.string().optional(),
+  scrub: z.string().optional(),
+  confidence: z.string().optional(),
+  consent: z.boolean().refine((val) => val === true, "Consent is required"),
+  // Not stored in DB, just for form validation
+  aiSuggestions: z.string().optional()
+}).superRefine((data, ctx) => {
+  if (data.requestType === "individual") {
+    if (!data.name || data.name.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Name is required for individual requests",
+        path: ["name"]
+      });
+    }
+    if (!data.age || data.age.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Age range is required for individual requests",
+        path: ["age"]
+      });
+    }
+    if (!data.address || data.address.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Address is required for individual requests",
+        path: ["address"]
+      });
+    }
+    if (!data.shade || data.shade.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Lip shade preference is required",
+        path: ["shade"]
+      });
+    }
+    if (!data.scent || data.scent.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Scent preference is required",
+        path: ["scent"]
+      });
+    }
+    if (!data.lashes || data.lashes.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Lashes preference is required",
+        path: ["lashes"]
+      });
+    }
+    if (!data.oil || data.oil.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Lip oil preference is required",
+        path: ["oil"]
+      });
+    }
+    if (!data.scrub || data.scrub.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Lip scrub preferences are required",
+        path: ["scrub"]
+      });
+    }
+    if (!data.confidence || data.confidence.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please share what makes you feel confident",
+        path: ["confidence"]
+      });
+    }
+  }
+  if (data.requestType === "organization") {
+    if (!data.organizationName || data.organizationName.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Organization name is required",
+        path: ["organizationName"]
+      });
+    }
+    if (!data.staffName || data.staffName.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Your name is required",
+        path: ["staffName"]
+      });
+    }
+    if (!data.staffRole || data.staffRole.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Your role is required",
+        path: ["staffRole"]
+      });
+    }
+    if (!data.contactEmail || data.contactEmail.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Contact email is required",
+        path: ["contactEmail"]
+      });
+    } else if (data.contactEmail && !z.string().email().safeParse(data.contactEmail).success) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please enter a valid email address",
+        path: ["contactEmail"]
+      });
+    }
+    if (!data.quantity || typeof data.quantity === "string" && data.quantity.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Number of kits is required",
+        path: ["quantity"]
+      });
+    } else if (data.quantity && (typeof data.quantity === "string" && (isNaN(Number(data.quantity)) || Number(data.quantity) <= 0) || typeof data.quantity === "number" && data.quantity <= 0)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please enter a valid number greater than 0",
+        path: ["quantity"]
+      });
+    }
+  }
+});
+var insertChatSessionSchema = createInsertSchema(chatSessions).omit({
+  id: true,
+  createdAt: true
+});
+
 // server/routes.ts
 async function registerRoutes(app2) {
   app2.post("/api/chat", async (req, res) => {
@@ -394,30 +608,49 @@ async function registerRoutes(app2) {
   });
   app2.post("/api/kit-request", async (req, res) => {
     try {
-      const kitRequestSchema = z.object({
-        name: z.string().min(1),
-        age: z.string().min(1),
-        address: z.string().min(1),
-        email: z.string().optional(),
-        phone: z.string().optional(),
-        shade: z.string().min(1),
-        scent: z.string().min(1),
-        lashes: z.string().min(1),
-        oil: z.string().min(1),
-        scrub: z.string().min(1),
-        confidence: z.string().min(1),
-        aiSuggestions: z.string().optional()
-      });
-      const validatedData = kitRequestSchema.parse(req.body);
-      const sheetResponse = await fetch("https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/swervy/sheet1", {
+      const validatedData = kitRequestValidationSchema.parse(req.body);
+      const { consent, ...submissionData } = validatedData;
+      const organizationSubmissionData = {
+        submissionDate: (/* @__PURE__ */ new Date()).toISOString(),
+        requestType: submissionData.requestType,
+        // Individual/Recipient Information  
+        name: submissionData.name || "",
+        age: submissionData.age || "",
+        address: submissionData.address || "",
+        email: submissionData.email || "",
+        phone: submissionData.phone || "",
+        // Organization Information (for bulk orders)
+        organizationName: submissionData.organizationName || "",
+        staffName: submissionData.staffName || "",
+        staffRole: submissionData.staffRole || "",
+        contactEmail: submissionData.contactEmail || "",
+        contactPhone: submissionData.contactPhone || "",
+        organizationType: submissionData.organizationType || "",
+        quantity: submissionData.requestType === "organization" && submissionData.quantity ? Number(submissionData.quantity) : submissionData.quantity || "",
+        ageGroups: submissionData.ageGroups || "",
+        specialNeeds: submissionData.specialNeeds || "",
+        bulkCustomization: submissionData.bulkCustomization || "",
+        // Product Preferences (optional for organization requests)
+        shade: submissionData.shade || "",
+        scent: submissionData.scent || "",
+        lashes: submissionData.lashes || "",
+        oil: submissionData.oil || "",
+        scrub: submissionData.scrub || "",
+        confidence: submissionData.confidence || "",
+        aiSuggestions: submissionData.aiSuggestions || ""
+      };
+      const sheetResponse = await fetch("https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/swervyCares/sheet1", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${process.env.SHEETY_API_KEY || ""}`
         },
-        body: JSON.stringify({ sheet1: validatedData })
+        body: JSON.stringify({ sheet1: organizationSubmissionData })
       });
       if (!sheetResponse.ok) {
-        throw new Error("Failed to submit to Google Sheets");
+        const errorText = await sheetResponse.text();
+        console.error("Sheety API Error:", sheetResponse.status, errorText);
+        throw new Error(`Failed to submit to Google Sheets: ${sheetResponse.status} - ${errorText}`);
       }
       const result = await sheetResponse.json();
       res.json({ success: true, data: result });
@@ -428,17 +661,17 @@ async function registerRoutes(app2) {
   });
   app2.post("/api/volunteer", async (req, res) => {
     try {
-      const volunteerSchema = z.object({
-        name: z.string().min(1),
-        email: z.string().email(),
-        phone: z.string().min(1),
-        age: z.string().min(1),
-        location: z.string().min(1),
-        opportunities: z.string().min(1),
-        time: z.string().min(1),
-        skills: z.string().min(1),
-        motivation: z.string().min(1),
-        comments: z.string().optional()
+      const volunteerSchema = z2.object({
+        name: z2.string().min(1),
+        email: z2.string().email(),
+        phone: z2.string().min(1),
+        age: z2.string().min(1),
+        location: z2.string().min(1),
+        opportunities: z2.string().min(1),
+        time: z2.string().min(1),
+        skills: z2.string().min(1),
+        motivation: z2.string().min(1),
+        comments: z2.string().optional()
       });
       const validatedData = volunteerSchema.parse(req.body);
       const sheetResponse = await fetch("https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/volunteer/sheet1", {
