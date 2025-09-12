@@ -86,7 +86,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       if (!sheetResponse.ok) {
-        throw new Error('Failed to submit to Google Sheets');
+        const errorText = await sheetResponse.text();
+        console.error('Sheety API Error:', sheetResponse.status, errorText);
+        throw new Error(`Failed to submit to Google Sheets: ${sheetResponse.status} - ${errorText}`);
       }
 
       const result = await sheetResponse.json();
