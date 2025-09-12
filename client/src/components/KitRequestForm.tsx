@@ -59,24 +59,8 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
   const submitMutation = useMutation({
     mutationFn: async (data: KitRequestFormData) => {
       const { consent, ...submitData } = data;
-      
-      // Create FormData for Google Forms submission
-      const formData = new FormData();
-      
-      // Add your Google Form field IDs here (get these from inspecting your Google Form)
-      // Example: formData.append('entry.123456789', submitData.requestType);
-      
-      // For now, we'll use a simple fetch to your Google Form
-      // Replace 'YOUR_GOOGLE_FORM_ID' with your actual form ID
-      const GOOGLE_FORM_ID = 'YOUR_GOOGLE_FORM_ID_HERE';
-      const response = await fetch(`https://docs.google.com/forms/d/${GOOGLE_FORM_ID}/formResponse`, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors' // Required for Google Forms
-      });
-      
-      // Google Forms always returns opaque response with no-cors, so we assume success
-      return { success: true };
+      const response = await apiRequest('POST', '/api/kit-request', submitData);
+      return response.json();
     },
     onSuccess: () => {
       setIsSubmitted(true);
