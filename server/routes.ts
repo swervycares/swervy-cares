@@ -80,7 +80,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const sheetResponse = await fetch('https://api.sheety.co/b8ee76e1f97b11355b5b90a8e37eab16/swervyCares/sheet1', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.SHEETY_API_KEY || ''}`
         },
         body: JSON.stringify({ sheet1: organizationSubmissionData })
       });
