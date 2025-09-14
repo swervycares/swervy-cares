@@ -21,14 +21,14 @@ const kitRequestValidationSchema = z.object({
   name: z.string().optional(),
   age: z.string().optional(), 
   address: z.string().optional(),
-  email: z.string().email().optional(),
+  email: z.union([z.string().email(), z.literal("")]).optional(),
   phone: z.string().optional(),
   
   // Organization fields (required when requestType is 'organization')
   organizationName: z.string().optional(),
   staffName: z.string().optional(),
   staffRole: z.string().optional(), 
-  contactEmail: z.string().email().optional(),
+  contactEmail: z.union([z.string().email(), z.literal("")]).optional(),
   contactPhone: z.string().optional(),
   organizationType: z.string().optional(),
   quantity: z.union([z.string(), z.number()]).optional(),
