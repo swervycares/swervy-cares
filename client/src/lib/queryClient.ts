@@ -15,7 +15,7 @@ function getApiBaseUrl(): string {
   }
   
   // In production (GitHub Pages), use existing Vercel backend 
-  return import.meta.env.VITE_API_BASE_URL || 'https://swervy-cares-backend101.vercel.app';
+  return import.meta.env.VITE_API_BASE_URL || 'https://swervy-cares-backend.vercel.app';
 }
 
 export async function apiRequest(
