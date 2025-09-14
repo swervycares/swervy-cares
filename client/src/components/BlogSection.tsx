@@ -53,9 +53,11 @@ This was made with all of you in mind, and I truly hope you enjoy it.`,
   },
   {
     id: 3,
-    title: "Building Confidence: More Than Just Makeup",
-    excerpt: "Coming Soon - Reflections on how self-care rituals create lasting confidence and why external beauty can help nurture inner strength.",
-    content: `This blog post is coming soon! Stay tuned for insights on how self-care rituals create lasting confidence and the deeper meaning behind our mission.`,
+    title: "Building Confidence, More Than Just Makeup",
+    excerpt: "Coming soon- When we think about girls and women in domestic violence shelters, homeless shelters, or even schools where resources are limited, makeup and self-care products aren't usually the first things that come to mind. But the truth is, they really do matter.",
+    content: `Coming soon- When we think about girls and women in domestic violence shelters, homeless shelters, or even schools where resources are limited, makeup and self-care products aren't usually the first things that come to mind. But the truth is, they really do matter. As a high school girl I can positively tell you that confidence IS powerful. Having something as simple as lip gloss with your favorite color, or a scent tied to a happy memory can make someone feel valued and cared for. 
+
+Swervy Cares was created with that belief in mind. This reflection is about looking beyond the surface and understanding that my mission giving underserved girls the chance to feel confident in their own skin.`,
     date: "Coming Soon",
     readTime: "Coming Soon",
     category: "Reflection",
