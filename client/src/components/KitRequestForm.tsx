@@ -58,8 +58,8 @@ export default function KitRequestForm({ aiSuggestions }: KitRequestFormProps) {
 
   const submitMutation = useMutation({
     mutationFn: async (data: KitRequestFormData) => {
-      const { consent, ...submitData } = data;
-      const response = await apiRequest('POST', '/api/kit-request', submitData);
+      // Send all data including consent to backend
+      const response = await apiRequest('POST', '/api/kit-request', data);
       return response.json();
     },
     onSuccess: () => {
