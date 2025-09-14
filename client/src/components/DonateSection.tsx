@@ -20,39 +20,39 @@ export default function DonateSection() {
         {/* Donation Impact Options */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
-            <div className="text-4xl font-bold text-swervy-pink mb-4">$15</div>
+            <div className="text-4xl font-bold text-swervy-pink mb-4">$10</div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">Starter Kit</h3>
             <p className="text-gray-600 mb-6">Basic self-care items including lip balm, affirmation cards, and a personalized note.</p>
             <Button 
-              onClick={() => openPayPalDonation(15)}
+              onClick={() => openPayPalDonation(10)}
               className="bg-swervy-pink hover:bg-pink-500 text-white font-bold py-3 px-6 rounded-full transition-colors"
             >
-              Donate $15
+              Donate $10
             </Button>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 text-center border-2 border-swervy-pink">
             <div className="bg-swervy-pink text-white px-3 py-1 rounded-full text-sm font-bold mb-4 inline-block">Most Popular</div>
-            <div className="text-4xl font-bold text-swervy-pink mb-4">$25</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Essential Kit</h3>
-            <p className="text-gray-600 mb-6">Complete kit with lip products, lashes, self-care items, and educational materials.</p>
+            <div className="text-4xl font-bold text-swervy-pink mb-4">$30</div>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">3 Kits</h3>
+            <p className="text-gray-600 mb-6">Three complete starter kits to help three different girls feel confident and cared for.</p>
             <Button 
-              onClick={() => openPayPalDonation(25)}
+              onClick={() => openPayPalDonation(30)}
               className="bg-swervy-pink hover:bg-pink-500 text-white font-bold py-3 px-6 rounded-full transition-colors"
             >
-              Donate $25
+              Donate $30
             </Button>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
-            <div className="text-4xl font-bold text-swervy-pink mb-4">$50</div>
+            <div className="text-4xl font-bold text-swervy-pink mb-4">$55</div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">Deluxe Kit</h3>
-            <p className="text-gray-600 mb-6">Two complete kits with premium items, personalized touches, and beautiful packaging.</p>
+            <p className="text-gray-600 mb-6">Help out 5 people with premium self-care kits including enhanced products and personalized touches.</p>
             <Button 
-              onClick={() => openPayPalDonation(50)}
+              onClick={() => openPayPalDonation(55)}
               className="bg-swervy-pink hover:bg-pink-500 text-white font-bold py-3 px-6 rounded-full transition-colors"
             >
-              Donate $50
+              Donate $55
             </Button>
           </div>
 
@@ -70,8 +70,8 @@ export default function DonateSection() {
 
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
             <div className="text-4xl font-bold text-purple-500 mb-4">$250</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Community Champion</h3>
-            <p className="text-gray-600 mb-6">Ten kits or community workshop series reaching dozens of girls.</p>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Reach Dozens of Girls/Women</h3>
+            <p className="text-gray-600 mb-6">Community impact program reaching dozens of girls and women with workshops and kits.</p>
             <Button 
               onClick={() => openPayPalDonation(250)}
               className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full transition-colors"
