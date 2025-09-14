@@ -157,8 +157,9 @@ export const kitRequestValidationSchema = z.object({
     }
   }
   
-  // Organization requests require org details but product preferences are optional
+  // Organization requests - only require minimal fields (most things optional)
   if (data.requestType === "organization") {
+    // Organization name is required
     if (!data.organizationName || data.organizationName.length === 0) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
@@ -166,33 +167,8 @@ export const kitRequestValidationSchema = z.object({
         path: ["organizationName"]
       });
     }
-    if (!data.staffName || data.staffName.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Your name is required",
-        path: ["staffName"]
-      });
-    }
-    if (!data.staffRole || data.staffRole.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Your role is required",
-        path: ["staffRole"]
-      });
-    }
-    if (!data.contactEmail || data.contactEmail.length === 0) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Contact email is required",
-        path: ["contactEmail"]
-      });
-    } else if (data.contactEmail && !z.string().email().safeParse(data.contactEmail).success) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Please enter a valid email address",
-        path: ["contactEmail"]
-      });
-    }
+    
+    // Quantity must be a positive number
     if (!data.quantity || (typeof data.quantity === 'string' && data.quantity.length === 0)) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
@@ -207,6 +183,32 @@ export const kitRequestValidationSchema = z.object({
         code: z.ZodIssueCode.custom,
         message: "Please enter a valid number greater than 0",
         path: ["quantity"]
+      });
+    }
+    
+    // At least one contact method required (email OR phone) - staffName and staffRole are now optional
+    const hasValidEmail = data.contactEmail && data.contactEmail.length > 0;
+    const hasValidPhone = data.contactPhone && data.contactPhone.length > 0;
+    
+    if (!hasValidEmail && !hasValidPhone) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Either contact email or contact phone is required",
+        path: ["contactEmail"]
+      });
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Either contact email or contact phone is required",
+        path: ["contactPhone"]
+      });
+    }
+    
+    // Validate email format if provided (but not required)
+    if (data.contactEmail && data.contactEmail.length > 0 && !z.string().email().safeParse(data.contactEmail).success) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please enter a valid email address",
+        path: ["contactEmail"]
       });
     }
   }

@@ -49,15 +49,53 @@ const kitRequestValidationSchema = z.object({
   consent: z.boolean().refine((val) => val === true, {
     message: "You must consent to receive a kit"
   })
-}).refine((data) => {
-  // When requestType is 'organization', require organization fields
+}).superRefine((data, ctx) => {
+  // When requestType is 'organization', only require minimal fields
   if (data.requestType === 'organization') {
-    return data.organizationName && data.staffName && data.staffRole && data.contactEmail && data.quantity;
+    // Organization name is required
+    if (!data.organizationName || data.organizationName.trim() === '') {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Organization name is required",
+        path: ["organizationName"]
+      });
+    }
+    
+    // Quantity must be a positive number
+    if (!data.quantity || data.quantity === '') {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Quantity is required for organization requests",
+        path: ["quantity"]
+      });
+    } else {
+      const num = typeof data.quantity === 'string' ? parseInt(data.quantity) : data.quantity;
+      if (isNaN(num) || num <= 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "Quantity must be a positive number",
+          path: ["quantity"]
+        });
+      }
+    }
+    
+    // At least one contact method required (email OR phone)
+    const hasValidEmail = data.contactEmail && data.contactEmail.trim() !== '';
+    const hasValidPhone = data.contactPhone && data.contactPhone.trim() !== '';
+    
+    if (!hasValidEmail && !hasValidPhone) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Either contact email or contact phone is required",
+        path: ["contactEmail"]
+      });
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Either contact email or contact phone is required", 
+        path: ["contactPhone"]
+      });
+    }
   }
-  return true;
-}, {
-  message: "Organization requests require: organizationName, staffName, staffRole, contactEmail, and quantity",
-  path: ["organizationName"]
 });
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
