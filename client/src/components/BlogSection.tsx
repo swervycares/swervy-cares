@@ -38,19 +38,13 @@ Aishni Raghuvanshi`,
   },
   {
     id: 2,
-    title: "The Science Behind AI-Powered Beauty Recommendations",
-    excerpt: "How we use machine learning to understand personal style preferences and create perfectly matched recommendations for each girl.",
-    content: `Working on the AI behind Swervy Cares has been one of the most meaningful things I've ever done. Whenever someone asks how our AI chat works, I genuinely love sharing the story and walking them through how carefully we built it.
+    title: "The story behind AI powered beauty recommendations",
+    excerpt: "The personal journey of building an AI chat that understands makeup preferences and guides girls to their perfect self-care kit.",
+    content: `Working on the AI aspect behind Swervy Cares has been such a memorable experience for me. I built an AI chat that talks with you to understand your makeup preferences based on your age and the looks you like, whether that's bold, natural, or even glam.
 
-It all starts with understanding three simple but important things. First, the makeup style each girl feels drawn to. Some prefer natural looks, others love bold styles, and some are all about the latest trends. Second, the colors that make them feel most confident. And third, the scents they personally love, which often connect to memories or emotions.
+The idea is to support girls who might not know much about makeup but want access to these products. The AI chat guides them and redirects them to the "Request a Kit" form, making the process easy and personal. My goal is for every kit to feel tailored, whether that means including a scent tied to a favorite memory or a color that you love.
 
-What makes our AI really special isn't just the technology. It's how we trained it to understand girls in a real, thoughtful way. For example, when a 12-year-old says she likes bold makeup, that can mean something completely different from what a 16-year-old might mean. The system is built to give age-appropriate recommendations every time.
-
-The recommendation engine works with over 30 color choices and more than 16 scent options. But it's not about picking from a big list. It's about finding what truly fits each girl. If someone says she loves warm tones and sweet scents, the AI doesn't just grab random suggestions. It carefully chooses products that make sense based on the whole conversation.
-
-One thing I'm really proud of is that the system remembers the little things. If a girl says she feels confident wearing a certain color to school, that stays in mind. It helps recommend not just the right lip gloss, but maybe also a confidence journal or a motivational sticker that speaks to her personally.
-
-The best part? It's when I see messages from girls who say the AI really understood them. That moment makes everything worth it. It's not magic. It's care, attention, and a lot of heart behind the way we built it.`,
+This was made with all of you in mind, and I truly hope you enjoy it.`,
     date: "July 1, 2025",
     readTime: "7 min read",
     category: "Technology",
