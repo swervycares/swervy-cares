@@ -11,8 +11,54 @@ interface VercelResponse {
   json: (data: any) => void;
   end: () => void;
 }
-import { ZodError } from 'zod';
-import { kitRequestValidationSchema } from '../shared/schema';
+import { ZodError, z } from 'zod';
+
+// Inline validation schema for Vercel serverless environment
+const kitRequestValidationSchema = z.object({
+  requestType: z.enum(['individual', 'organization']),
+  
+  // Individual/Recipient fields (always optional now)
+  name: z.string().optional(),
+  age: z.string().optional(), 
+  address: z.string().optional(),
+  email: z.string().email().optional(),
+  phone: z.string().optional(),
+  
+  // Organization fields (required when requestType is 'organization')
+  organizationName: z.string().optional(),
+  staffName: z.string().optional(),
+  staffRole: z.string().optional(), 
+  contactEmail: z.string().email().optional(),
+  contactPhone: z.string().optional(),
+  organizationType: z.string().optional(),
+  quantity: z.union([z.string(), z.number()]).optional(),
+  ageGroups: z.string().optional(),
+  specialNeeds: z.string().optional(),
+  bulkCustomization: z.string().optional(),
+  
+  // Product preferences (all optional)
+  shade: z.string().optional(),
+  scent: z.string().optional(),
+  lashes: z.string().optional(),
+  oil: z.string().optional(),
+  scrub: z.string().optional(),
+  confidence: z.string().optional(),
+  aiSuggestions: z.string().optional(),
+  
+  // Required consent
+  consent: z.boolean().refine((val) => val === true, {
+    message: "You must consent to receive a kit"
+  })
+}).refine((data) => {
+  // When requestType is 'organization', require organization fields
+  if (data.requestType === 'organization') {
+    return data.organizationName && data.staffName && data.staffRole && data.contactEmail && data.quantity;
+  }
+  return true;
+}, {
+  message: "Organization requests require: organizationName, staffName, staffRole, contactEmail, and quantity",
+  path: ["organizationName"]
+});
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Handle CORS - restrict to specific domains for security
