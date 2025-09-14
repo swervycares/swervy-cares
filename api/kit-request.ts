@@ -86,6 +86,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    // Check if API key is configured
+    const apiKey = (process.env.SHEETY_API_KEY || '').trim().replace(/^Bearer\s+/i, '');
+    if (!apiKey) {
+      return res.status(500).json({ error: 'SHEETY_API_KEY not configured' });
+    }
+
     const validatedData = kitRequestValidationSchema.parse(req.body);
 
     // Organize data for Google Sheets with proper structure (consent field is removed by destructuring)
@@ -125,13 +131,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.SHEETY_API_KEY || ''}`
+        'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({ sheet1: organizationSubmissionData })
     });
 
     if (!sheetResponse.ok) {
-      throw new Error('Failed to submit to Google Sheets');
+      const errorText = await sheetResponse.text();
+      console.error('Sheety error:', sheetResponse.status, errorText);
+      return res.status(502).json({ 
+        error: 'Sheety request failed', 
+        status: sheetResponse.status,
+        details: errorText
+      });
     }
 
     const result = await sheetResponse.json();
